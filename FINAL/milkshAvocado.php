@@ -15,7 +15,7 @@ include 'header.php';
         <div class="row">
     
             <div class="col-md-6">
-                <img src="img/Avocado(bg).png" class="centerimage">
+                <img src="img/5Avocado(bg).png" class="centerimage">
             </div>
     
             <div class="col-md-6">
