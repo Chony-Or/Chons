@@ -25,7 +25,7 @@
 			<td><?php echo $ProductValue['Product_Category'] ?></td>
 			<td><?php echo $ProductValue['Product_Stocks'] ?></td>
 			<td>
-				<a class="btn btn-warning" href="editproduct.php?id=<?php echo $ProductValue['Product_I']  ?>">Edit</a>
+				<a class="btn btn-warning" href="editproduct.php?id=<?php echo $ProductValue['Product_ID']  ?>">Edit</a>
 				<a class="btn btn-danger" href="">Delete</a>
 			</td>
 		</tr>
