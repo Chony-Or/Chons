@@ -26,7 +26,7 @@
 			<td><?php echo $ProductValue['Product_Stocks'] ?></td>
 			<td>
 				<a class="btn btn-warning" href="editproduct.php?id=<?php echo $ProductValue['Product_ID']  ?>">Edit</a>
-				<a class="btn btn-danger" href="deleteproduct.php?id=<?php echo $ProductValue['Product_ID'] ?>">Delete</a>
+				<a class="btn btn-danger" href="">Delete</a>
 			</td>
 		</tr>
 		<?php endforeach ?>

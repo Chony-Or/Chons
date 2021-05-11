@@ -9,6 +9,7 @@ if (isset($_POST['Submit']))
 		$Product_Name = $_POST["Product_Name"];
 		$Product_Code = $_POST["Product_Code"];
 		$Product_Category = $_POST["Product_Category"];
+        $Amount = $_POST["Amount"];
 
 		$sqlvar ="INSERT INTO product_tbl(Product_Stocks,Product_Name,Product_Code,Product_Category) VALUES
 
@@ -34,8 +35,24 @@ if (isset($_POST['Submit']))
         <label for="Product_Category">Product Category: </label>
 		<input type="Text"	name="Product_Category">
 
+        <label for="Size_Description">Size: </label>
+        <input type="Text" name="Size_Description">
+
+        <label for="Amount">Amount: </label>
+        <input type="text" name="Amount">
+
+        <label for="Addons_Name">Addons </label>
+        <input type="text" name="Addons_Name">
+
+        <label for="Addons_Price"> Addon's Price</label>
+        <input type="Text" name="Addons_Price">
+
+        <label for="Addons_Stocks"> Addon's Stocks</label>
+        <input type="Text" name="Addons_Stocks">
+
 		<input type="Submit"	name="Submit">
 	</form>
+
 
 </body>
 <?php include "includes/footer.php" ?>
