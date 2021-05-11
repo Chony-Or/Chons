@@ -1,6 +1,8 @@
-<?php include "includes/db_connection.php" ?>
+<?php  ?>
 
 <?php 
+	include "Crud.php";
+	$Admin = new New Crud('tbl_admin_user','Admin_ID');
 	$error = "";
 	if (isset($_POST['username'])) 
 	{	
@@ -10,9 +12,11 @@
 		if (!empty($Admin_Email) && !empty($Admin_Password) ) 
 		{
 			$Admin_Password = sha1($Admin_Password);
-			$getUser = "Select * from tbl_admin_user where Is_Active and  Admin_Email='{$Admin_Email}' and Admin_Password = '{$Admin_Password}'";
-			$User = $connection->query($getUser);
-			$User = $User->fetch_all(MYSQLI_ASSOC);
+
+			
+
+			$where = "Is_Active and  Admin_Email='{$Admin_Email}' and Admin_Password = '{$Admin_Password}'";
+			$User = $Admin ->get($where);
 			if (count($User) == 0) 
 			{
 				$error = "Information Mismatch";
@@ -24,7 +28,7 @@
 				session_start();
 
 				$_SESSION['user_info'] = $User[0];
-				// var_dump($_SESSION);
+				header("Location: product.php")
 			}
 		}
 		
