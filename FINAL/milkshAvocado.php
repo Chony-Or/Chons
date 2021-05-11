@@ -2,6 +2,22 @@
 include 'header.php';
 ?>
 
+<?php 
+
+
+$server = "localhost"; // connect to sql
+$username = "root";
+$password ="";
+$DB = "lhoyzki_ordering";
+
+$connection = new mysqli($server,$username,$password,$DB);// connection
+
+	$getAddons = "Select * from addons_tbl where Is_Active";
+	$Addons = $connection->query($getAddons);
+	$Addons = $Addons->fetch_all(MYSQLI_ASSOC);//
+
+ ?>
+
 <head>
   <link rel="stylesheet" href="orderSection.css" type="text/css">
 </head>
@@ -53,10 +69,12 @@ include 'header.php';
                             </div>
 
                         <b style="font-size:15px; margin-left: 7px ">Add ons:</b><br><br>
-
-                            <input type="checkbox" style="margin-left: 15px " id="blackpearl" name="blackpearl" value="blackpearl">
-                            <label for="blackpearl" style="font-size:14px;  padding:5px">Black Pearl <i style="margin-left: 350px">+₱15.00</i></label><br>
-                            <input type="checkbox" style="margin-left: 15px " id="oreo" name="oreo" value="oreo">
+                        <?php foreach ($Addons as $key => $AddonsValue): ?>
+                            <input type="checkbox" style="margin-left: 15px " id="<?php echo $AddonsValue['Addons_Name'] ?>" name="addons[]" value="<?php echo $AddonsValue['Addons_ID'] ?>">
+                            <label for="<?php echo $AddonsValue['Addons_Name'] ?>" style="font-size:14px;  padding:5px"><?php echo $AddonsValue['Addons_Name'] ?> <i style="margin-left: 350px">+₱<?php echo $AddonsValue['Addons_Price'] ?></i></label><br>
+                        <?php endforeach?> <!-- for the return value of addons name and price -->
+                           
+                            <!--<input type="checkbox" style="margin-left: 15px " id="oreo" name="oreo" value="oreo">
                             <label for="oreo" style="font-size:14px;  padding:5px">Oreo <i style="margin-left: 384px">+₱15.00</i></label><br>
                             <input type="checkbox" style="margin-left: 15px " id="mallows" name="mallows" value="mallows">
                             <label for="mallows" style="font-size:14px;  padding:5px">Mallows <i style="margin-left: 364px">+₱15.00</i></label><br>
@@ -69,8 +87,8 @@ include 'header.php';
                             <input type="checkbox" style="margin-left: 15px " id="pudding" name="pudding" value="pudding">
                             <label for="pudding" style="font-size:14px; padding:5px">Pudding <i style="margin-left: 363px">+₱15.00</i></label><br>
                             <input type="checkbox" style="margin-left: 15px " id="red" name="red" value="red beans">
-                            <label for="red" style="font-size:14px; padding:5px">Red Beans <i style="margin-left: 352px">+₱15.00</i></label><br><br>
-
+                            <label for="red" style="font-size:14px; padding:5px">Red Beans <i style="margin-left: 352px">+₱15.00</i></label><br><br> -->
+                        
                         <b for="quan" style="font-size:15px; margin-left: 7px ">Quantity :</b>
                         <button class="quant" type="button" style="margin-left: 4px "  onclick="decrement()"><b>-</b></button>
                         <input style="text-align:center; width: 15% ; height: 25px;" id=Input type=number min=1 max=100 value=1>
