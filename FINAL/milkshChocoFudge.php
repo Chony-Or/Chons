@@ -69,9 +69,10 @@ include 'header.php';
                             <label for="red" style="font-size:14px; padding:5px">Red Beans <i style="margin-left: 352px">+₱15.00</i></label><br><br>
 
                         <b for="quan" style="font-size:15px; margin-left: 7px ">Quantity :</b>
-                        <button class="quant" style="margin-left: 4px " onclick="decrement()"><b>-</b></button>
+                        
+                        <button class="quant" type="button" style="margin-left: 4px " onclick="decrement()"><b>-</b></button>
                         <input style="text-align:center; width: 15% ; height: 25px;" id=Input type=number min=1 max=100 value=1>
-                        <button class="quant"  onclick="increment()"><b>+</b></button>
+                        <button class="quant" type="button" onclick="increment()"><b>+</b></button>
 
 						<script>
 							function increment() {

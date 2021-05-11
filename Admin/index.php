@@ -13,6 +13,7 @@
 			$getUser = "Select * from tbl_admin_user where Is_Active and  Admin_Email='{$Admin_Email}' and Admin_Password = '{$Admin_Password}'";
 			$User = $connection->query($getUser);
 			$User = $User->fetch_all(MYSQLI_ASSOC);
+			var_dump($getUser);
 			if (count($User) == 0) 
 			{
 				$error = "Information Mismatch";
@@ -24,6 +25,7 @@
 				session_start();
 
 				$_SESSION['user_info'] = $User[0];
+				header("Location: product.php");
 				// var_dump($_SESSION);
 			}
 		}

@@ -36,8 +36,6 @@ include 'header.php';
                         <input type="radio" style="margin-left: 15px " id="large" name="sizes" value="large">
                         <label for="large"  style="font-size:13px; padding:5px">EXTRA LARGE <i style="margin-left: 328px" > +₱140.00</i></label><br>
                             <br><br></div>
-
-
  
                             <div style="margin-left: 7px " ><b style="font-size:15px;">Sugar Level/s:</b><br><br>
 
@@ -53,8 +51,6 @@ include 'header.php';
                                 <label for="large" style="font-size:13px; padding:5px">   0%  </label><br>
                                     <br><br>
                             </div>
-
-
 
                         <b style="font-size:15px; margin-left: 7px ">Add ons:</b><br><br>
 
