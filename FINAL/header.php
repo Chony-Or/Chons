@@ -35,8 +35,9 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true">MENU</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                                <a class="dropdown-item" href="milkshake.php">Milkshake</a>
-                                <a class="dropdown-item" href="milktea.php">Milktea</a>
+                            
+                                <a class="dropdown-item" href="product.php?code=MilkShake">Milkshake</a>
+                                <a class="dropdown-item" href="product.php?code=MilkTea">Milktea</a>
                             </div>
                         </li>
 
