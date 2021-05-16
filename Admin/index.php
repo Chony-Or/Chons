@@ -24,7 +24,8 @@
 				session_start();
 
 				$_SESSION['user_info'] = $User[0];
-				header("Location: productlist.php");
+				//header("Location: productlist.php");
+				header("Location: main.php");
 			}
 		}
 		
@@ -32,7 +33,13 @@
 	
 ?>
 
-<?php include "includes/header.php" ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/css/style.css" rel="stylesheet">
+</head>
 <body>
 	<div class="login-form">
 	    <form action="index.php" method="post">
