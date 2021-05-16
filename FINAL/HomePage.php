@@ -5,13 +5,15 @@ include 'header.php';
     <link rel="stylesheet" href="HomePage.css" type="text/css">
 </head>
 
+
 <body class="bodycolor">
  
-    <div class="container" style="margin-top: 75px">
-        <img class="d-md-block img-fluid" src="img/MainPic1.png">
+    <div style="margin-top: 45px">
+        <img class="d-md-block img-fluid" src="img/MainPic3.png">
     </div>
 
     <!--Favorites Section-->
+
     <section id="new">
         <div class="jumbotron text-center" style="margin-bottom: 0" id="favheader">
             <h1 class="menu-title" style="color: rgb(78, 68, 34); margin-top: 40px;">FAVORITES</h1><br>
