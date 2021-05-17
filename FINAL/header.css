@@ -53,6 +53,13 @@
     background-color: #fadadd;
 }
 
+.nav-item {
+    display: flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items: center;
+}
+
 #navbarMenu a {
     margin-right: 30px;
     font-size: 14px;
@@ -66,6 +73,23 @@
     border-bottom: 2px solid rgb(78, 68, 34);
 }
 
+.addcart-icon {
+    position: absolute;
+    top: 28px;
+    left: 60%;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    background-color: black;
+    border-radius: 100%;
+    margin-bottom: 20px;
+}
+
+span.addcart-text {
+    color: white;
+    font-weight: bolder;
+    font-size: 10px;
+}
 
 /* End Header Section */
 
