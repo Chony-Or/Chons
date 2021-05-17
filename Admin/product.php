@@ -72,22 +72,6 @@ if (isset($_POST['Submit']))
 		<label for="Product_Picture">Product Picture source: </label>
 		<input type="file" name="Product_Picture" id="fileToUpload">
 
-        <!--<label for="Size_Description">Size: </label>
-        <input type="Text" name="Size_Description">
-
-        <label for="Amount">Amount: </label>
-        <input type="text" name="Amount">
-
-        <label for="Addons_Name">Addons </label>
-        <input type="text" name="Addons_Name">
-
-        <label for="Addons_Price"> Addon's Price</label>
-        <input type="Text" name="Addons_Price">
-
-        <label for="Addons_Stocks"> Addon's Stocks</label>
-        <input type="Text" name="Addons_Stocks">
-		-->
-
 		<input type="Submit"	name="Submit">
 	</form>
 
