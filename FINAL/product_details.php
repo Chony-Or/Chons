@@ -48,7 +48,7 @@ if(isset($_GET['id']))
                             <h2 style="margin-left: 7px; margin-top:5px"><?php echo $ProductMilkshake[0]['Product_Name'] ?></h2><hr style="border-top: 1px solid;">
                             <p style="font-size:15px; margin-left: 10px"><?php echo $ProductMilkshake[0]['Product_Details'] ?></p><br>
                             
-                     <form action="milkshAvocado.php" method="POST">
+                     <form action="product_details.php" method="POST">
 
                         <div style="margin-left: 7px" aria-required="true"> <b style="font-size:15px;">Available Size/s:</b><br><br>
                         

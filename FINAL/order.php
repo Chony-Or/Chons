@@ -11,7 +11,7 @@ include 'header.php';
 
     <form action="order.php" method="POST">
 
-    <center> <table class="table table-bordered"  style="margin-top: 200px;margin-bottom:45px">
+    <center> <table border=1 style="width:auto; margin-top: 200px;margin-bottom:45px;margin: left 45px;margin: right 45px;">
 
         <tr style="font-weight:900; font-size:larger">
                 <th>Name</th>
