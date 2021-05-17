@@ -6,10 +6,12 @@ include 'header.php';
 <link rel="stylesheet" href="HomePage.css" type="text/css">
 </head>
 
-<body class="bodycolor" >
-    <div style="margin-top: 45px">
+<body>
+
+
     <form action="order.php" method="POST">
-     <table class = "center" border="1" >
+
+    <center> <table class="table table-bordered"  style="margin-top: 200px;margin-bottom:45px">
 
         <tr style="font-weight:900; font-size:larger">
                 <th>Name</th>
@@ -33,10 +35,9 @@ include 'header.php';
                 <td>Action</td>
         </tr>
 
-    </table>
+    </table> </center>
     
     </form>
-    </div>
 
 </body>
 
