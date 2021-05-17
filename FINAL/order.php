@@ -3,51 +3,41 @@ include 'header.php';
 ?>
 
 <head>
-    <link rel="stylesheet" href="HomePage.css" type="text/css">
+<link rel="stylesheet" href="HomePage.css" type="text/css">
 </head>
 
-<body class="bodycolor">
- 
-        <div class="container" style="margin-top: 40px">
-        <img class="d-md-block img-fluid" src="img/MainPic2.png">
-        </div>
+<body class="bodycolor" >
+    <div style="margin-top: 45px">
+    <form action="order.php" method="POST">
+     <table class = "center" border="1" >
 
-        <form action="order.php" method="POST">
-        <div class = "container">
-        <table class = "center" border="1">
-
-            <tr style="">
-                    <th>Name</th>
-                    <th>Code</th>
-                    <th>Category</th>
-                    <th>Quantity</th>
-                    <th>Action</th>
-            </tr>
-
-        <tr>
-        <td>
-        </td>
-        <td>
-        </td>
-        <td>
-        </td>
+        <tr style="font-weight:900; font-size:larger">
+                <th>Name</th>
+                <th>Code</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Action</th>
         </tr>
-
-        <tr>
-        <td>
-        </td>
-        <td>
-        </td>
-        <td>
-        </td>
+        <tr style="font-weight:900; font-size:larger">
+                <td>Name</td>
+                <td>Code</td>
+                <td>Category</td>
+                <td>Quantity</td>
+                <td>Action</td>
         </tr>
-
+        <tr style="font-weight:900; font-size:larger">
+                <td>Name</td>
+                <td>Code</td>
+                <td>Category</td>
+                <td>Quantity</td>
+                <td>Action</td>
+        </tr>
 
     </table>
+    
+    </form>
     </div>
 
-
-    </form>
 </body>
 
 <?php 

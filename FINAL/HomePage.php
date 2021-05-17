@@ -9,7 +9,7 @@ include 'header.php';
 <body class="bodycolor">
  
     <div style="margin-top: 45px">
-        <img class="d-md-block img-fluid" src="img/MainPic3.png">
+       <center> <img class="d-md-block img-fluid" src="img/MainPic3.png"></center>
     </div>
 
     <!--Favorites Section-->
