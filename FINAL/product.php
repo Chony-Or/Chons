@@ -17,9 +17,9 @@ $connection = new mysqli($server,$username,$password,$DB);// connection
 if(isset($_GET['code']))
 {
     $code = $_GET['code'];
-	$getProductMilkshake = "Select * from product_tbl where Is_Active and Product_Category = '{$code}'";
-	$ProductMilkshake = $connection->query($getProductMilkshake );
-	$ProductMilkshake = $ProductMilkshake->fetch_all(MYSQLI_ASSOC);
+	$getProductlist = "Select * from product_tbl where Is_Active and Product_Category = '{$code}'";
+	$Productlist = $connection->query($getProductlist );
+	$Productlist = $Productlist->fetch_all(MYSQLI_ASSOC);
 }
  ?>
 
@@ -32,7 +32,7 @@ if(isset($_GET['code']))
     <!--Menu Section-->
     <div class="jumbotron">
         <br>
-        <h1 class="milkshake" style="font-family: 'Fantasy'; color: #725527; margin-top: 80px; margin-left: 15%;"><?php echo $ProductMilkshake["Product_Category"] ?></h1><br>
+        <h1 class="milkshake" style="font-family: 'Fantasy'; color: #725527; margin-top: 80px; margin-left: 15%;"><?php echo $Productlist[0]["Product_Category"] ?></h1><br>
         <center><hr style="width: 71%; border-top: 1px solid black;">
     </div>
 
@@ -41,7 +41,7 @@ if(isset($_GET['code']))
         
         <div class="row">
 
-        <?php foreach ($ProductMilkshake as $key => $MilkshakeValue): ?>
+        <?php foreach ($Productlist as $key => $MilkshakeValue): ?>
 
             <div class="col-md-3">
                 <div class="card">
