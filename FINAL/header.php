@@ -45,7 +45,7 @@
                             <a class="nav-link" href="#about">ABOUT</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Cart.php">
+                            <a class="nav-link" href="order.php">
                                 <img src="https://img.icons8.com/dotty/40/000000/add-shopping-cart.png"/>
                                 <div class="addcart-icon">
                                     <center><span class="addcart-text">0</span>

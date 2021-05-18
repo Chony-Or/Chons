@@ -8,36 +8,34 @@ include 'header.php';
 
 <body>
 
-
+    <div style="margin-top: 200px;margin-bottom:45px;padding: 45px">
     <form action="order.php" method="POST">
 
-    <center> <table border=1 style="width:auto; margin-top: 200px;margin-bottom:45px;margin: left 45px;margin: right 45px;">
+    <center> <table class="table table-hover" border=1>
 
         <tr style="font-weight:900; font-size:larger">
-                <th>Name</th>
-                <th>Code</th>
-                <th>Category</th>
+                <th>Product</th>
+                <th>Price</th>
                 <th>Quantity</th>
-                <th>Action</th>
+                <th>Total</th>
         </tr>
         <tr style="font-weight:900; font-size:larger">
-                <td>Name</td>
-                <td>Code</td>
-                <td>Category</td>
-                <td>Quantity</td>
-                <td>Action</td>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
         </tr>
         <tr style="font-weight:900; font-size:larger">
-                <td>Name</td>
-                <td>Code</td>
-                <td>Category</td>
-                <td>Quantity</td>
-                <td>Action</td>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
         </tr>
 
     </table> </center>
     
     </form>
+    </div>
 
 </body>
 
