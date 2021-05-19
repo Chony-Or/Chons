@@ -21,6 +21,10 @@
                         </li>
 
                         <li class="nav-item">
+                            <a class="nav-link" href="product.php">ADDPRODUCT</a>
+                        </li>
+
+                        <li class="nav-item">
                             <a class="nav-link" href="productlist.php">PRODUCT</a>
                         </li>
 
@@ -29,7 +33,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="sizelist">SIZE</a>
+                            <a class="nav-link" href="sizelist.php">SIZE</a>
 
                         </li>
                     </ul>

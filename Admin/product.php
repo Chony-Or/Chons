@@ -8,17 +8,18 @@
 if (isset($_POST['Submit']))
 	{
 
-
-
 		$Product_Stocks = $_POST["Product_Stocks"];
 		$Product_Name = $_POST["Product_Name"];
 		$Product_Code = $_POST["Product_Code"];
 		$Product_Category = $_POST["Product_Category"];
 		$Product_Details = $_POST["Product_Details"];
+		$Size_Regular = $_POST["Regular"];
+		$Size_Large = $_POST["Large"];
+		$Size_Extra = $_POST["ExtraLarge"];
         //$Amount = $_POST["Amount"];
 
 
-		$target_dir = "../FINAL/src/";
+		$target_dir = "../FINAL/src/"; //for picture uploading
 		$Product_Picture = $target_dir . str_replace(" ","",basename($_FILES["Product_Picture"]["name"])) ;//to replace spaces specific character in string 
 		$uploadOk = 1;
 		$imageFileType = strtolower(pathinfo($Product_Picture,PATHINFO_EXTENSION));
@@ -41,15 +42,34 @@ if (isset($_POST['Submit']))
 			move_uploaded_file($_FILES["Product_Picture"]["tmp_name"], $Product_Picture);
 
 			$sqlvar ="INSERT INTO product_tbl(Product_Stocks,Product_Name,Product_Code,Product_Category,Product_Details,Product_Picture) VALUES
-
 			('{$Product_Stocks}','{$Product_Name}','{$Product_Code}','{$Product_Category}','{$Product_Details}','{$Product_Picture}')";
 
-			var_dump($connection->query($sqlvar));
-			var_dump($sqlvar);
+			
+			if ($connection->query($sqlvar) === TRUE) {
+				$last_id = $connection->insert_id;
+				
+				$insertRegular = "INSERT INTO size_tbl(Product_ID, Amount, Size_Description) VALUES
+				('{$last_id}','{$Size_Regular}','REGULAR')";
 
+				
+				$insertLarge = "INSERT INTO size_tbl(Product_ID, Amount, Size_Description) VALUES
+				('{$last_id}','{$Size_Large}','LARGE')";
+
+				
+				$insertExtra = "INSERT INTO size_tbl(Product_ID, Amount, Size_Description) VALUES
+				('{$last_id}','{$Size_Extra}','Extra Large')";
+
+				$connection->query($insertRegular);
+				$connection->query($insertLarge);
+				$connection->query($insertExtra);
+
+			} else {
+				echo "Error: " . $sql . "<br>" . $conn->error;
+			}
+
+			
 		}
 	}	
-
 ?>
 <body>
 
@@ -68,6 +88,18 @@ if (isset($_POST['Submit']))
 
 		<label for="Product_Details">Product Details: </label>
 		<Input type="Text" name="Product_Details">
+
+
+		<label for="Size_Description">Price for Regular: </label>
+		<input type="Text"	name="Regular">
+
+        <label for="Size_Description">Price for Large: </label>
+		<input type="Text"	name="Large">
+
+		<label for="Size_Description">Product Extra-Large: </label>
+		<Input type="Text" name="ExtraLarge">
+
+
 
 		<label for="Product_Picture">Product Picture source: </label>
 		<input type="file" name="Product_Picture" id="fileToUpload">
