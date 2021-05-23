@@ -42,7 +42,7 @@
 </head>
 <body>
 	<div class="login-form">
-	    <form action="index.php" method="post">
+	    <form action="admin.php" method="post">
 			<h2 class="text-center">Member Login</h2>   
 			<?php if (!empty($error)): ?>
 				<div class="alert alert-info text-center"><h4><?php echo $error ?></h4></div>
