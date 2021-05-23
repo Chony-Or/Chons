@@ -3924,6 +3924,7 @@ textarea.form-control-lg {
   justify-content: space-between;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  box-shadow: 0 6px 10px -2px #70c5c0;
 }
 .navbar > .container,
 .navbar > .container-fluid,
