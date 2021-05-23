@@ -7,7 +7,7 @@
 
 	<head>
 	<section id="header" style="margin-bottom: 75px">
-        <nav class="navbar navbar-expand-xl fixed-top navbar-light" >
+        <nav class="navbar navbar-expand-xl fixed-top navbar-dark bg-dark">
             <div class="container">
                 <a  class="navbar-brand" href="#header"><img id="navbarBrand" src="img/color.png" style="margin-left: 60px;" width="default" height="60"></a>
                 <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
