@@ -15,23 +15,24 @@ include 'header.php';
     <center><hr style="width: 71%; border-top: 1px solid black;">
   </div>
       
-  <br><br>
+  <br><br><br>
   <div class="container">
   
     <div class="row">
       
       <div class="col-md-3">
+
         <div class="card">
           <div class="card-body">
             <a href="milktTaro.php">
               <img src="img/ClassicTaroMT.png" class="centerimage">
             </a>
-            <br><br>
+            <br><br><br>
             <div class="textcolor"><center><h4><b>Classic Taro Milktea</b></h4></center><br>
             <center></center></div>
           </div>
         </div>
-      </div>
+      </div> 
     
       <div class="col-md-3">
         <div class="card">
