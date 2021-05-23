@@ -1,7 +1,6 @@
-<?php include "includes/redirection.php" ?>
+<?php //include "includes/redirection.php" ?>
 <?php include "includes/header.php" ?>
 <?php include "includes/db_connection.php" ?>
-<?php var_dump($_SESSION); ?>
 <?php
 
 
@@ -43,6 +42,16 @@ if (isset($_POST['Submit']))
 
 			$sqlvar ="INSERT INTO product_tbl(Product_Stocks,Product_Name,Product_Code,Product_Category,Product_Details,Product_Picture) VALUES
 			('{$Product_Stocks}','{$Product_Name}','{$Product_Code}','{$Product_Category}','{$Product_Details}','{$Product_Picture}')";
+			
+
+			if (mysqli_query($connection, $sqlvar)) 
+			{ 
+				echo '<p style="color:black;"> Successfully record added </p>';
+			}
+
+			else 
+			{ echo '<p style="color:black;"> Error adding record </p>' . mysqli_error($connection);
+			}
 
 			
 			if ($connection->query($sqlvar) === TRUE) {
@@ -74,6 +83,7 @@ if (isset($_POST['Submit']))
 <body>
 
 	<form action="product.php" method="POST" enctype="multipart/form-data">
+	<div style="color:black;">
         <label for="Product_Stocks">Product Stocks: </label>
 		<input type="Text"	name="Product_Stocks">
 
@@ -105,7 +115,9 @@ if (isset($_POST['Submit']))
 		<input type="file" name="Product_Picture" id="fileToUpload">
 
 		<input type="Submit"	name="Submit">
+	</div>
 	</form>
+
 
 
 </body>
