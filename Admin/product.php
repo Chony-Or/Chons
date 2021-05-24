@@ -82,57 +82,86 @@ if (isset($_POST['Submit']))
 ?>
 <body>
 	<style>
-		table,td{padding :15px;
+		.product-form form{
+			color: #7a7a7a;
+	border-radius: 40px;
+	width: 60%;
+	margin-bottom: 50px;
+    font-size: 30px;
+    background: #ececec;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 100px;	
+    position: relative;	
 		}
+		.product-form {
+	height: 100%;
+	margin: auto;
+	padding: 150px 100px;
+	display: flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items: center;
+		}
+	input[type=submit] {
+  width: 50%;
+  background-color: #7a7a7a ;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 		</style>
-
-	<table>
+	
+	<div class= "product-form">
 	
 	<form action="product.php" method="POST" enctype="multipart/form-data">
-<tr>
-      
+	<table>
+      <tr>
 		<td><label for="Product_Stocks" style= "color:black">Product Stocks: </label>
 		<input type="Text"	name="Product_Stocks"></td>
-</tr>
-<tr>
-		
-       <td> <label for="Product_Name" style= "color:black">Product Name: </label>
+		</tr>
+		<tr>
+       <td><label for="Product_Name" style= "color:black">Product Name: </label>
 		<input type="Text"	name="Product_Name"></td>
-</tr>
-<tr>
-		<td><label for="Product_Code" style= "color:black">Product Code: </label>
-		<input type="Text"	name="Product_Code"></td>
-</tr>
-<tr>
+		</tr>
+		<tr>
+		<label for="Product_Code" style= "color:black">Product Code: </label>
+		<input type="Text"	name="Product_Code">
+		</tr>
+		<tr>	
 		<td><label for="Product_Category" style= "color:black">Product Category: </label>
 		<input type="Text"	name="Product_Category"></td>
-</tr>
-<tr>
+		</tr>
+		<tr>
 		<td><label for="Product_Details" style= "color:black">Product Details: </label>
 		<Input type="Text" name="Product_Details"></td>
-
-</tr>
+		</tr>
+		<tr>
 		<td><label for="Size_Description" style= "color:black">Price for Regular: </label>
 		<input type="Text"	name="Regular"></td>
-</tr>
-<tr>
+		</tr>
+		<tr>
 		<td><label for="Size_Description" style= "color:black">Price for Large: </label>
 		<input type="Text"	name="Large"></td>
-</tr>
-<tr>
+		</tr>
+		<tr>
 		<td><label for="Size_Description" style= "color:black">Product Extra-Large: </label>
 		<Input type="Text" name="ExtraLarge"></td>
-</tr>
-
-<tr>
-		<td> <label for="Product_Picture" style= "color:black">Product Picture source: </label>
-		<input type="file" name="Product_Picture" id="fileToUpload" style= "color:black"> </td>
-</tr>
-<tr>	
-		<td><input type="Submit" name="Submit"></td>
-</tr>		
+		</tr>
+		<tr>
+		 <td><label for="Product_Picture" style= "color:black">Product Picture source: </label>
+		<input type="file" name="Product_Picture" id="fileToUpload" style= "color:black"></td>
+		</tr>
+		<tr>
+	    <td><input type="Submit" name="Submit"></td>
+		</tr>
+		</table>
 	</form>
-</table>
+	
+	</div>
+
 
 
 
