@@ -15,7 +15,7 @@ img {
 </head>
 <body>
 
-<img src="img_mainlogo.png" alt="lhoyzski logo" style="width:100%;">
+<img src="mainlogo.png" alt="lhoyzski logo" style="width:100%;">
 <h2>Center an Image</h2>
 <p>To center an image, set left and right margin to auto, and make it into a block element.</p>
 
