@@ -72,40 +72,58 @@ if (isset($_POST['Submit']))
 	}	
 ?>
 <body>
+	<style>
+		table,td{padding :15px;
+		}
+		</style>
 
+	<table>
+	
 	<form action="product.php" method="POST" enctype="multipart/form-data">
-        <label for="Product_Stocks">Product Stocks: </label>
-		<input type="Text"	name="Product_Stocks">
+<tr>
+      
+		<td><label for="Product_Stocks" style= "color:black">Product Stocks: </label>
+		<input type="Text"	name="Product_Stocks"></td>
+</tr>
+<tr>
+		
+       <td> <label for="Product_Name" style= "color:black">Product Name: </label>
+		<input type="Text"	name="Product_Name"></td>
+</tr>
+<tr>
+		<td><label for="Product_Code" style= "color:black">Product Code: </label>
+		<input type="Text"	name="Product_Code"></td>
+</tr>
+<tr>
+		<td><label for="Product_Category" style= "color:black">Product Category: </label>
+		<input type="Text"	name="Product_Category"></td>
+</tr>
+<tr>
+		<td><label for="Product_Details" style= "color:black">Product Details: </label>
+		<Input type="Text" name="Product_Details"></td>
 
-        <label for="Product_Name">Product Name: </label>
-		<input type="Text"	name="Product_Name">
+</tr>
+		<td><label for="Size_Description" style= "color:black">Price for Regular: </label>
+		<input type="Text"	name="Regular"></td>
+</tr>
+<tr>
+		<td><label for="Size_Description" style= "color:black">Price for Large: </label>
+		<input type="Text"	name="Large"></td>
+</tr>
+<tr>
+		<td><label for="Size_Description" style= "color:black">Product Extra-Large: </label>
+		<Input type="Text" name="ExtraLarge"></td>
+</tr>
 
-        <label for="Product_Code">Product Code: </label>
-		<input type="Text"	name="Product_Code">
-
-        <label for="Product_Category">Product Category: </label>
-		<input type="Text"	name="Product_Category">
-
-		<label for="Product_Details">Product Details: </label>
-		<Input type="Text" name="Product_Details">
-
-
-		<label for="Size_Description">Price for Regular: </label>
-		<input type="Text"	name="Regular">
-
-        <label for="Size_Description">Price for Large: </label>
-		<input type="Text"	name="Large">
-
-		<label for="Size_Description">Product Extra-Large: </label>
-		<Input type="Text" name="ExtraLarge">
-
-
-
-		<label for="Product_Picture">Product Picture source: </label>
-		<input type="file" name="Product_Picture" id="fileToUpload">
-
-		<input type="Submit"	name="Submit">
+<tr>
+		<td> <label for="Product_Picture" style= "color:black">Product Picture source: </label>
+		<input type="file" name="Product_Picture" id="fileToUpload" style= "color:black"> </td>
+</tr>
+<tr>	
+		<td><input type="Submit" name="Submit"></td>
+</tr>		
 	</form>
+</table>
 
 
 </body>
