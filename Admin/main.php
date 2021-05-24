@@ -9,14 +9,15 @@ img {
   display: block;
   margin-left: 50%;
   margin-right: auto;
-  
 }
 
 </style>
 </head>
 <body>
 
-<img src="mainlogo.png" alt="lhoyzski logo" style="width:100%;">
+<img src="http://www.yourdomain.com/img/mainlogo.png" width="200" height="267" alt="me">
+
+
 <h2>Center an Image</h2>
 <p>To center an image, set left and right margin to auto, and make it into a block element.</p>
 
