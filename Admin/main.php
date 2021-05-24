@@ -20,7 +20,7 @@ img {
 
 <center><h1 style="color:black" >Welcome to Lhoyzki Admin</h1></center>
 <center><p style="color:black">This website was designed specifcally for the Admin users. Admin Users have the control to access all the functionalities of this website.<br>
- Admin website aims to give overall control it could be in database or for monitoring purposes.<br>
+ Admin website aims to give overall control it could be in database or for monitoring .<br>
   Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p></center>
 
 </body>
