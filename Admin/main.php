@@ -18,8 +18,8 @@ img {
 
 <img id="mainlogo" src="img/logo.png" style="float: center; padding: 150px 9px 9px 3px;"   >
 
-<center><h2>Center an Image</h2></center>
-<center><p>To center an image, set left and right margin to auto, and make it into a block element.</p></center>
+<center><h2 style="color:black">Lhoyzki Admin</h2></center>
+<center><p style="color:black">To center an image, set left and right margin to auto, and make it into a block element.</p></center>
 
 </body>
 </html>
