@@ -110,11 +110,11 @@ include 'header.php';
            <b style="color:#3CB371; font-size:25px;" >₱90.00</b>
               </h1>
 
-              <button type="button" style=" font-family: 'Consolas'; font-size:7px; margin-left:930px; width:150px; height:40px; border-radius:5px; background-color:#8a5f56; color:white">
+            <div>  <button type="button" style=" font-family: 'Consolas'; font-size:7px; margin-left:930px; width:150px; height:40px; border-radius:5px; background-color:#8a5f56; color:white">
               <a href="HomePage.php" style="color: #F0FFF0; text-decoration: none;"></a><b>CONTINUE SHOPPING</b></button>
 
               <button type="button" style=" font-family: 'Consolas';margin-left:20px;font-size:20px; width:150px; height:40px; border-radius:5px; background-color:#8a5f56; color:white">
-              <b>CHECKOUT</b></button>
+              <b>CHECKOUT</b></button></div>
         
 
    
