@@ -10,7 +10,7 @@ include 'header.php';
 
 <body>
 
-    <div style="margin-top: 150px;margin-bottom:45px;padding: 45px">
+    <div class="container-fluid" style="margin-top: 50px;margin-bottom:45px;padding: 45px">
     <form action="order.php" method="POST">
 
     <h2 style="font-family: 'Courier';">SHOPPING CART</h2>
@@ -84,7 +84,7 @@ include 'header.php';
                         <button class="quant" type="button" style="margin-left: 4px "  onclick="decrement()"><b>-</b></button>
                         <input style="text-align:center; width: 30% ; height: 27px; " id=Input type=number min=1 max=100 value=1>
                         <button class="quant" type="button" onclick="increment()"><b>+</b></button>
-                <script>
+        <script>
 	function increment() {
 	document.getElementById('Input').stepUp();
 		}
