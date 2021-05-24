@@ -36,6 +36,9 @@ font-weight: bold;
 <p class="p1">This website was designed specifcally for the Admin users.<br>Moreover, Admin Users have the control to access all the functionalities of this website.</p></center>
 <p class="text"> "Admin website aims to give overall control it could be in database or for monitoring purposes"</p>
 
+<img class="src="img/logo.png" style="float: center; padding: 70px 1px 25px 9px;" width="20%"  >
+
+
 </body>
 </html>
 
