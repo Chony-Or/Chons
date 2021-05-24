@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
 </head>    
-    <section id="Header">
+    <section id="Header" style="margin-bottom:80px">
         <nav class="navbar navbar-expand-xl fixed-top navbar-dark bg-dark" >
             <div class="container-fluid">
                 <a class="navbar-brand" href="#header"><img src="img/adminlogo.png" style="margin-left: 60px;" width="default" height="60"></a>
@@ -19,7 +19,7 @@
     
                 <div class="collapse navbar-collapse " id="NAVBAR" >
 
-                    <ul class="navbar-nav ms-auto text-center" style ="font-size:1.3em">
+                    <ul class="navbar-nav ms-auto" style ="font-size:1.3em; text-align:right">
                     
                     <li class="nav-item">
                             <a class="nav-link" href="main.php">MAIN</a>

@@ -26,9 +26,8 @@
 			<td><?php echo $AddonsValue['Addons_Price'] ?></td>
 			<td><?php echo $AddonsValue['Addons_Stocks'] ?></td>
 			<td>
+			<form action="addonslist.php" method="POST">
 				<a class="btn btn-warning" href="editaddons.php?id=<?php echo $AddonsValue['Addons_ID']  ?>">Edit</a>
-                <form action="addonslist.php" method="POST">
-                
 				<a class="btn btn-danger" href="addonslist.php?id=<?php echo $AddonsValue['Addons_ID'] ?>"> Delete</a>
                 </form>
             </td>
