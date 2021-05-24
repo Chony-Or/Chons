@@ -19,8 +19,8 @@
             <div class="container">
             <a class="navbar-brand" href="#header"><img id="navbarBrand" src="img/coloredlogo.png" style="margin-left: 30px;" width="90" height="60"><span>Lhoyzki</span></a>
                 <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+                <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarMenu">
 
                     <ul class="navbar-nav ml-auto">
