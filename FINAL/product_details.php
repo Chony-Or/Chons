@@ -63,7 +63,7 @@ if(isset($_GET['id']))
                         <div style="margin-left: 7px " ><b style="font-size:15px;">Sugar Level/s:</b><br><br>
 
                             <input type="radio" style="margin-left: 15px " id="1h" name="slevel" value="100">
-                            <label for="1hundred" style="font-size:13px; padding:5px">  100%   </label>
+                            <label for="1h" style="font-size:13px; padding:5px">  100%   </label>
                             <input type="radio" id="7payb" name="slevel" value="75">
                             <label for="7payb" style="font-size:13px; padding:5px">   75% </label>
                             <input type="radio" id="pipti" name="slevel" value="50">
