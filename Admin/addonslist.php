@@ -7,7 +7,7 @@
 	$Addons = $connection->query($getAddons);
 	$Addons = $Addons->fetch_all(MYSQLI_ASSOC);//
 
-    var_dump($Addons);
+    //var_dump($Addons);
  ?>
 
 <body>

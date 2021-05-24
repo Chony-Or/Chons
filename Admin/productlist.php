@@ -8,12 +8,8 @@
 	$Product = $Product->fetch_all(MYSQLI_ASSOC);
 
  ?>
-
  
-
 <body>
-
-
 <a class="btn btn-dark" href="product.php">ADD NEW PRODUCT</a></br>
 	<table class="table table-bordered">
 		<tr>
