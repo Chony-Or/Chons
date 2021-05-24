@@ -8,9 +8,7 @@
 	$Product = $Product->fetch_all(MYSQLI_ASSOC);
 
  ?>
-
  
-
 <body>
 
 
