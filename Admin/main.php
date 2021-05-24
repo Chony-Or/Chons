@@ -15,7 +15,7 @@ img {
 </head>
 <body>
 
-<img src="http://www.yourdomain.com/img/mainlogo.png" width="200" height="267" alt="me">
+<img src="http://www.yourdomain.com/img/logo.png" width="200" height="267" alt="me">
 
 
 <h2>Center an Image</h2>
