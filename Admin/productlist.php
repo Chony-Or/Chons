@@ -7,25 +7,14 @@
 	$Product = $connection->query($getProduct);
 	$Product = $Product->fetch_all(MYSQLI_ASSOC);
 
-	$result = mysqli_query($connection, $getProduct);
-
-	if (mysqli_num_rows($result) > 0) {
-	// output data of each row
-		while($row = mysqli_fetch_array($result)) {
-
-			echo   " id: " . $row["Product_ID"]. " - Name: " . $row['Product_Name']. " " . $row['Product_Category']. "<br>";
-		}
-	} else {
-		echo "0 results";
-	}
-
-	
  ?>
 
  
 
 <body>
 
+
+<a class="btn btn-dark" href="product.php">ADD NEW PRODUCT</a></br>
 	<table class="table table-bordered">
 		<tr>
 			<th>Name</th>
@@ -49,6 +38,6 @@
 		</tr>
 		<?php endforeach ?>
 	</table>
-
+	
 </body>
 <?php include "includes/footer.php" ?>
