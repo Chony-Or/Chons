@@ -87,11 +87,11 @@ if (isset($_POST['Submit']))
 	border-radius: 40px;
 	width: 60%;
 	margin-bottom: 50px;
-    font-size: 30px;
+    font-size: 20px;
     background: #ececec;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     padding: 100px;	
-    position: relative;	
+    position:absolute;	
 		}
 		.product-form {
 	height: 100%;
@@ -119,40 +119,40 @@ if (isset($_POST['Submit']))
 	<form action="product.php" method="POST" enctype="multipart/form-data">
 	<table>
       <tr>
-		<td><label for="Product_Stocks" style= "color:black">Product Stocks: </label>
-		<input type="Text"	name="Product_Stocks"></td>
+		<td><label for="Product_Stocks" style= "color:black">Product Stocks: </label></td>
+		<td><input type="Text"	name="Product_Stocks"></td>
 		</tr>
 		<tr>
-       <td><label for="Product_Name" style= "color:black">Product Name: </label>
-		<input type="Text"	name="Product_Name"></td>
+       <td><label for="Product_Name" style= "color:black">Product Name: </label></td>
+	   <td><input type="Text"	name="Product_Name"></td>
 		</tr>
 		<tr>
-		<label for="Product_Code" style= "color:black">Product Code: </label>
-		<input type="Text"	name="Product_Code">
+		<td><label for="Product_Code" style= "color:black">Product Code: </label></td>
+		<td><input type="Text"	name="Product_Code"></td>
 		</tr>
 		<tr>	
-		<td><label for="Product_Category" style= "color:black">Product Category: </label>
-		<input type="Text"	name="Product_Category"></td>
+		<td><label for="Product_Category" style= "color:black">Product Category: </label></td>
+		<td><input type="Text"	name="Product_Category"></td>
 		</tr>
 		<tr>
-		<td><label for="Product_Details" style= "color:black">Product Details: </label>
-		<Input type="Text" name="Product_Details"></td>
+		<td><label for="Product_Details" style= "color:black">Product Details: </label></td>
+		<td><Input type="Text" name="Product_Details"></td>
 		</tr>
 		<tr>
-		<td><label for="Size_Description" style= "color:black">Price for Regular: </label>
-		<input type="Text"	name="Regular"></td>
+		<td><label for="Size_Description" style= "color:black">Price for Regular: </label></td>
+		<td><input type="Text"	name="Regular"></td>
 		</tr>
 		<tr>
-		<td><label for="Size_Description" style= "color:black">Price for Large: </label>
-		<input type="Text"	name="Large"></td>
+		<td><label for="Size_Description" style= "color:black">Price for Large: </label></td>
+		<td><input type="Text"	name="Large"></td>
 		</tr>
 		<tr>
-		<td><label for="Size_Description" style= "color:black">Product Extra-Large: </label>
-		<Input type="Text" name="ExtraLarge"></td>
+		<td><label for="Size_Description" style= "color:black">Product Extra-Large: </label></td>
+		<td><Input type="Text" name="ExtraLarge"></td>
 		</tr>
 		<tr>
-		 <td><label for="Product_Picture" style= "color:black">Product Picture source: </label>
-		<input type="file" name="Product_Picture" id="fileToUpload" style= "color:black"></td>
+		<td><label for="Product_Picture" style= "color:black">Product Picture source:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+		<td><input type="file" name="Product_Picture" id="fileToUpload" style= "color:black"></td>
 		</tr>
 		<tr>
 	    <td><input type="Submit" name="Submit"></td>
