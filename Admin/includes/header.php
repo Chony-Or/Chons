@@ -22,10 +22,6 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="product.php">ADDPRODUCT</a>
-                        </li>
-
-                        <li class="nav-item">
                             <a class="nav-link" href="productlist.php">PRODUCT</a>
                         </li>
 
@@ -33,9 +29,6 @@
                             <a class="nav-link" href="addonslist.php">ADDONS</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="sizelist.php">SIZE</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="admin.php">
                             <img src="https://img.icons8.com/color/48/000000/in-app-messaging.png"style="width: 43px; height:43px"/>
