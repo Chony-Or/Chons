@@ -9,15 +9,16 @@ img {
   display: block;
   margin-left: auto ;
   margin-right: auto;
+ 
 }
 
 </style>
 </head>
 <body>
 
-<img id="mainlogo" src="img/logo.png">
+<img id="mainlogo" src="img/logo.png" style="float: center; padding: 150px 9px 9px 3px;"   >
 
-<h2>Center an Image</h2>
+<center><h2>Center an Image</h2></center>
 <p>To center an image, set left and right margin to auto, and make it into a block element.</p>
 
 </body>
