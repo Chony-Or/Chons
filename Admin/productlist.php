@@ -13,8 +13,8 @@
 
 <body>
 
-<a class="btn btn-primary" href="product.php">ADD NEW PRODUCT</a></br>
 
+<a class="btn btn-dark" href="product.php">ADD NEW PRODUCT</a></br>
 	<table class="table table-bordered">
 		<tr>
 			<th>Name</th>
@@ -38,6 +38,6 @@
 		</tr>
 		<?php endforeach ?>
 	</table>
-
+	
 </body>
 <?php include "includes/footer.php" ?>
