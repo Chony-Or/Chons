@@ -38,7 +38,7 @@ if (isset($_POST['Submit']))
 				echo "File is not an image.";
 				$uploadOk = 0;
 			}
-			move_uploaded_file($_FILES["Product_Picture"]["tmp_name"], $Product_Picture);
+			move_uploaded_file($_FILES["Product_Picture"]["tmp_name"], $Product_Picture);// store location of the picture
 
 			$sqlvar ="INSERT INTO product_tbl(Product_Stocks,Product_Name,Product_Code,Product_Category,Product_Details,Product_Picture) VALUES
 			('{$Product_Stocks}','{$Product_Name}','{$Product_Code}','{$Product_Category}','{$Product_Details}','{$Product_Picture}')";
@@ -66,7 +66,7 @@ if (isset($_POST['Submit']))
 
 				
 				$insertExtra = "INSERT INTO size_tbl(Product_ID, Amount, Size_Description) VALUES
-				('{$last_id}','{$Size_Extra}','Extra Large')";
+				('{$last_id}','{$Size_Extra}','EXTRA LARGE')";
 
 				$connection->query($insertRegular);
 				$connection->query($insertLarge);
@@ -147,11 +147,11 @@ if (isset($_POST['Submit']))
 		<td><input type="Text"	name="Large"></td>
 		</tr>
 		<tr>
-		<td><label for="Size_Description" style= "color:black">Product Extra-Large: </label></td>
+		<td><label for="Size_Description" style= "color:black">Product Extra-Large: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
 		<td><Input type="Text" name="ExtraLarge"></td>
 		</tr>
 		<tr>
-		<td><label for="Product_Picture" style= "color:black">Product Picture source:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label></td>
+		<td><label for="Product_Picture" style= "color:black">Product Picture source:</label></td>
 		<td><input type="file" name="Product_Picture" id="fileToUpload" style= "color:black"></td>
 		</tr>
 		<tr>
