@@ -18,7 +18,7 @@ if(isset($_GET['code']))
 {
     $code = $_GET['code'];
 	$getProductlist = "Select * from product_tbl where Is_Active and Product_Category = '{$code}'";
-	$Productlist = $connection->query($getProductlist );
+	$Productlist = $connection->query($getProductlist ); // execute the query to the database 
 	$Productlist = $Productlist->fetch_all(MYSQLI_ASSOC);
 }
  ?>

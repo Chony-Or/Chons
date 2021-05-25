@@ -9,9 +9,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
 </head>    
     <section id="Header" style="margin-bottom:80px">
-        <nav class="navbar navbar-expand-xl fixed-top navbar-dark bg-dark" >
+        <nav class="navbar navbar-expand-xl fixed-top navbar-dark bg-dark" style= "box-shadow: -1px 1px  1.25rem #70c5c0;" >
             <div class="container-fluid">
-                <a class="navbar-brand" href="#header"><img src="img/adminlogo.png" style="margin-left: 60px;" width="default" height="60"></a>
+                <a class="navbar-brand" href="main.php"><img src="img/adminlogo.png" style="margin-left: 60px;" width="default" height="60"></a>
                 <button class="navbar-toggler" data-toggle="collapse" data-target="#NAVBAR" >
                     <span class="navbar-toggler-icon"></span> 
                 </button>
@@ -46,4 +46,4 @@
             </div>
         </nav>
 </section>
-<
+ 
