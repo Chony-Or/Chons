@@ -32,7 +32,7 @@ if(isset($_GET['id']))
     $getOrder = "INSERT INTO order_tbl(Order_ID,Product_ID,Customer_ID,Size_ID,Sugar_Level,Created_by,Addons,Quantity,Amount) VALUES
     ('{$Order_ID}','{$Product_ID}','{$Customer_ID}','{$Size_ID}','{$Sugar_Level}','{$Created_by}','{$Addons}','{$Quantity}','{$Amount}')";
     $Order = $connection->query($getOrder); // query for the orders all data will be inserted to order_tbl databse
- ?>
+}?>
 
 <head>
   <link rel="stylesheet" href="orderSection.css" type="text/css">
