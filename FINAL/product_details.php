@@ -16,11 +16,11 @@ if(isset($_GET['id']))
 {
     $Id = $_GET['id'];
 	$getAddons = "Select * from addons_tbl where Is_Active";
-	$Addons = $connection->query($getAddons);
+	$Addons = $connection->query($getAddons); // query to get all information from database
 	$Addons = $Addons->fetch_all(MYSQLI_ASSOC);
 
     $getProductMilkshake = "Select * from product_tbl where Is_Active and Product_ID =  {$Id} ";
-	$ProductMilkshake = $connection->query($getProductMilkshake );
+	$ProductMilkshake = $connection->query($getProductMilkshake );  // query to get all information from database
 	$ProductMilkshake = $ProductMilkshake->fetch_all(MYSQLI_ASSOC);
 }
  ?>
@@ -75,8 +75,8 @@ if(isset($_GET['id']))
                                 <br><br>
                         </div>
 
-                        <b style="font-size:15px; margin-left: 7px ">Add ons:</b><br><br>
-                        <?php foreach ($Addons as $key => $AddonsValue): ?>
+                        <b style="font-size:15px; margin-left: 7px ">Add ons:</b><br><br> 
+                        <?php foreach ($Addons as $key => $AddonsValue): ?>        <!--addons part connected from database -->
                             <table style="width: 100%">
                             <td><input type="checkbox" style="margin-left: 15px; margin-right: 15px" id="<?php echo $AddonsValue['Addons_Name'] ?>" name="addons[]" value="<?php echo $AddonsValue['Addons_ID'] ?>">
                             <label for="<?php echo $AddonsValue['Addons_Name'] ?>" style="font-size:14px;  padding:5px"><?php echo $AddonsValue['Addons_Name'] ?></label></td>
