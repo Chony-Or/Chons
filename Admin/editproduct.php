@@ -109,14 +109,14 @@ else
 
 <style>
 		.edit-form form{
-			color: #7a7a7a;
+	color: #7a7a7a;
 	border-radius: 50px;
-	width: 40%;
+	width:fit-content;
 	margin-bottom: 50px;
     background: #ececec;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     padding: 50px;	
-    position:absolute;	
+    position:relative;	
 		}
 		.edit-form {
 	height: 100%;
