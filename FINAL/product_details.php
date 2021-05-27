@@ -38,7 +38,7 @@ if(isset($_GET['id']))
     <link rel="stylesheet" href="http://flatlogic.github.io/awesome-bootstrap-checkbox/demo/ ..">
 </head>
 
-<body class="fixed-bg">
+<body>
 
     <!--Milkshake Seperate Per Product Page-->
     <div class="container">
@@ -52,70 +52,66 @@ if(isset($_GET['id']))
             <div class="col-md-6">
             <div class="semi-card">
             
-                        <div class="textcolor">
-                            <h2 style="margin-left: 7px; margin-top:5px"><?php echo $ProductMilkshake[0]['Product_Name'] ?></h2><hr style="border-top: 1px solid;">
-                            <p style="font-size:15px; margin-left: 10px"><?php echo $ProductMilkshake[0]['Product_Details'] ?></p><br>
+                <div class="textcolor">
+                    <br><h2 style="margin-left: 15px"><?php echo $ProductMilkshake[0]['Product_Name'] ?></h2><br>
+                    <p style="margin-left: 15px; font-size: 14px; "><?php echo $ProductMilkshake[0]['Product_Details'] ?></p><br>
                             
                     <form action="product_details.php" method="POST">
 
-                        <div style="margin-left: 7px" aria-required="true"> <b style="font-size:15px;">Available Size/s:</b><br><br>
+                        <div style="margin-left: 15px" aria-required="true"><b style="font-size:15px;">Available Size/s:</b><br><br>
                         
-                        <?php foreach($ProductSize as $key => $SizeValue): ?>   <!-- get all price and sizes from the database -->
-                        <table style="width: 100%">
-                            <td><input type="radio" style="margin-left: 15px; margin-right: 15px" name="sizes" id="<?php echo $SizeValue['Size_Description'] ?>" value="<?php echo $SizeValue['Size_ID'] ?>">
-                            <label for="<?php echo $SizeValue['Size_Description'] ?>" style="font-size:14px;  padding:5px"><?php echo $SizeValue['Size_Description'] ?></label></td>
-                           
-                            <td><p style="text-align:right; margin-right: 15px">+₱<?php echo $SizeValue['Amount'] ?></p></td>
-                        </table>
+                            <?php foreach($ProductSize as $key => $SizeValue): ?>   <!-- get all price and sizes from the database -->
+                            <table style="width: 100%">
+                                <td><input type="radio" style="margin-left: 15px; margin-right: 15px" name="sizes" id="<?php echo $SizeValue['Size_Description'] ?>" value="<?php echo $SizeValue['Size_ID'] ?>">
+                                <label for="<?php echo $SizeValue['Size_Description'] ?>" style="font-size: 14px; padding: 5px"><?php echo $SizeValue['Size_Description'] ?></label></td>
+                                <td><p style="text-align: right; margin-right: 15px">+₱<?php echo $SizeValue['Amount'] ?></p></td>
+                            </table>
 
-                        <?php endforeach ?>
-
-                        <!--
-                        <input type="radio" style="margin-left: 15px " id="small" name="sizes" value="small">
-                        <label for="small" style="font-size:13px; padding:5px ">REGULAR <i style="margin-left: 350px" > +₱110.00</i></label><br>
-                        <input type="radio" style="margin-left: 15px " id="medium" name="sizes" value="medium" >
-                        <label for="medium" style="font-size:13px; padding:5px">LARGE <i style="margin-left: 368px" > +₱125.00</i></label><br>
-                        <input type="radio" style="margin-left: 15px " id="large" name="sizes" value="large">
-                        <label for="large"  style="font-size:13px; padding:5px">EXTRA LARGE <i style="margin-left: 328px" > +₱140.00</i></label><br>
-                            -->
-                        <br><br></div>
+                            <?php endforeach ?>
+                            <!--
+                            <input type="radio" style="margin-left: 15px " id="small" name="sizes" value="small">
+                            <label for="small" style="font-size:13px; padding:5px ">REGULAR <i style="margin-left: 350px" > +₱110.00</i></label><br>
+                            <input type="radio" style="margin-left: 15px " id="medium" name="sizes" value="medium" >
+                            <label for="medium" style="font-size:13px; padding:5px">LARGE <i style="margin-left: 368px" > +₱125.00</i></label><br>
+                            <input type="radio" style="margin-left: 15px " id="large" name="sizes" value="large">
+                            <label for="large"  style="font-size:13px; padding:5px">EXTRA LARGE <i style="margin-left: 328px" > +₱140.00</i></label><br>-->
+                        <br>
+                        </div>
  
-                        <div style="margin-left: 7px " ><b style="font-size:15px;">Sugar Level/s:</b>
-                            <table style="width:70%">
+                        <div style="margin-left: 15px"><b style="font-size: 15px;">Sugar Level/s:</b>
+                            <table style="width: 70%; margin-left: 15px">
                             <tr>
                                 <td>
-                                    <input type="radio" style="margin-left: 15px " id="1h" name="Sugar_Level" value="100">
-                                    <label for="1h" style="font-size:13px; padding:5px">  100%   </label>
+                                    <input type="radio" id="1h" name="Sugar_Level" value="100">
+                                    <label for="1h" style="font-size: 14px; padding:5px">100%</label>
                                 </td>
                                 <td>
                                     <input type="radio" id="7payb" name="Sugar_Level" value="75">
-                                    <label for="7payb" style="font-size:13px; padding:5px">   75% </label>
+                                    <label for="7payb" style="font-size: 14px; padding:5px">75%</label>
                                 </td>
                                 <td>
                                     <input type="radio" id="pipti" name="Sugar_Level" value="50">
-                                    <label for="pipti" style="font-size:13px; padding:5px">   50% </label>
+                                    <label for="pipti" style="font-size: 14px; padding:5px">50%</label>
                                 </td>
                                 <td>
                                     <input type="radio" id="2payb" name="Sugar_Level" value="25">
-                                    <label for="2payb" style="font-size:13px; padding:5px">   25% </label>
+                                    <label for="2payb" style="font-size: 14px; padding:5px">25%</label>
                                 </td>
                                 <td>
                                     <input type="radio" id="zero" name="Sugar_Level" value="0">
-                                    <label for="zero" style="font-size:13px; padding:5px">   0%  </label><br>
+                                    <label for="zero" style="font-size: 14px; padding:5px">0%</label>
                                 </td>
                             </tr>
                             <br><br>
-                            </table>
+                            </table><br>
                         </div>
 
-                        <b style="font-size:15px; margin-left: 7px ">Add ons:</b><br><br> 
+                        <b style="margin-left: 15px; font-size: 15px;">Add ons:</b><br><br> 
                         <?php foreach ($Addons as $key => $AddonsValue): ?>        <!--addons part connected from database -->
                             
                             <table style="width: 100%">
                                 <td>
-                                    <label class="checkbox-circle">
-                                        <input type="checkbox" style="margin-left: 25px; margin-right: 15px" id="<?php echo $AddonsValue['Addons_Name'] ?>" name="addons[]" value="<?php echo $AddonsValue['Addons_ID'] ?>">
-                                    </label>
+                                    <input type="checkbox" style="margin-left: 25px; margin-right: 15px" id="<?php echo $AddonsValue['Addons_Name'] ?>" name="addons[]" value="<?php echo $AddonsValue['Addons_ID'] ?>">
                                     <label for="<?php echo $AddonsValue['Addons_Name'] ?>" style="font-size:14px;  padding:5px"><?php echo $AddonsValue['Addons_Name'] ?></label>
                                 </td>
                                 <td>
@@ -126,7 +122,7 @@ if(isset($_GET['id']))
                         <?php endforeach?> <!-- for the return value of addons name and price -->
                         
                    
-                        <b for="quan" style="font-size:15px; margin-left: 7px ">Quantity :</b>
+                        <br><b for="quan" style="font-size:15px; margin-left: 15px">Quantity :</b>
                         <button class="quant" type="button" style="margin-left: 4px "  onclick="decrement()"><b>-</b></button>
                         <input style="text-align:center; width: 15% ; height: 25px;" id=Input type=number min=1 max=100 value=1>
                         <button class="quant" type="button" onclick="increment()"><b>+</b></button>

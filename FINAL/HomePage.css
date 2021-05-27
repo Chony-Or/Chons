@@ -147,32 +147,6 @@ h1 {
 
 /* End Menu Section */
 
-/* Customer Info Section */
-
-label {
-    color: #B4886B;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-input[type="text"] {
-    height: 40px;
-    width: 400px;
-    border-radius: 5px;
-    border-color: #8a5f56;
-    border-width: 3px;
-}
-
-input[type="submit"] {
-    font-weight: bold;
-    font-size: 18px;
-    background-color: #8a5f56;
-    color:white;
-    height: 50px;
-    width: 150px;  
-    border-radius: 5px;
-}
-
 
 /*==========Media Queries for Desktop==========*/
 
