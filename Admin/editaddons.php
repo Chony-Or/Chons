@@ -30,21 +30,58 @@ if (isset($_POST['Submit']))
 }
 ?>
 <body>
+<style>
+		.edit-add form{
+			color: #7a7a7a;
+	border-radius: 50px;
+	width: 30%;
+	margin-bottom: 50px;
+    background: #ececec;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 50px;	
+    position:absolute;	
+		}
+		.edit-add{
+	height: 100%;
+	margin: auto;
+	padding: 150px 100px;
+	display: flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items: center;
+		}
+	input[type=submit] {
+  width: 70%;
+  background-color: #7a7a7a ;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 135%;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 
+}
+		</style>
+	<div class ="edit-add">
 	<form action="<?php echo "editaddons.php?id={$Id}" ?>" method="POST">
-        
-
-        <label for="Addons_Name">Addon's Name: </label>
-		<input type="Text"	name="Addons_Name" value="<?php echo $Addons[0]['Addons_Name'] ?>">
-        
-        <label for="Addons_Price">Addon's Price: </label>
-		<input type="Text"	name="Addons_Price" value="<?php echo $Addons[0]['Addons_Price'] ?>">
-
-        <label for="Addons_Stocks">Addon's Stocks: </label>
-		<input type="Text"	name="Addons_Stocks" value="<?php echo $Addons[0]['Addons_Stocks'] ?>">
-
-		<input type="Submit"	name="Submit">
+        <table>
+		<tr>
+        <td><label for="Addons_Name" style= "color:black; font-size: 20px;">Addon's Name: </label></td>
+		<td><input type="Text"	name="Addons_Name" style= "font-size: 20px;" value="<?php echo $Addons[0]['Addons_Name'] ?>"></td>
+        </tr>
+		<tr>
+        <td><label for="Addons_Price" style= "color:black; font-size: 20px;">Addon's Price: </label></td>
+		<td><input type="Text"	name="Addons_Price" style= "font-size: 20px;" value="<?php echo $Addons[0]['Addons_Price'] ?>"></td>
+		</tr>
+		<tr>
+		<td> <label for="Addons_Stocks" style= "color:black; font-size: 20px;">Addon's Stocks: </label></td>
+		<td><input type="Text"	name="Addons_Stocks" style= "font-size: 20px;" value="<?php echo $Addons[0]['Addons_Stocks'] ?>"></td>
+		</tr>
+		<tr>
+		<td><br><input type="Submit"name="Submit"></br><td>
+		</tr>
+		</table>
 	</form>
-
+</div>
 </body>
 <?php include "includes/footer.php" ?>

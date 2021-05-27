@@ -107,39 +107,87 @@ else
 ?>
 <body>
 
+<style>
+		.edit-form form{
+			color: #7a7a7a;
+	border-radius: 50px;
+	width: 40%;
+	margin-bottom: 50px;
+    background: #ececec;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 50px;	
+    position:absolute;	
+		}
+		.edit-form {
+	height: 100%;
+	margin: auto;
+	padding: 150px 100px;
+	display: flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items: center;
+		}
+	input[type=submit] {
+  width: 70%;
+  background-color: #7a7a7a ;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 116%;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+
+}
+		</style>
+
+	<div class= "edit-form">
 	<form action="<?php echo "editproduct.php?id={$Id}" ?>" method="POST" enctype="multipart/form-data">
-        <label for="Product_Stocks">Product Stocks: </label>
-		<input type="Text"	name="Product_Stocks" value="<?php echo $Product[0]['Product_Stocks'] ?>">
-
-        <label for="Product_Name">Product Name: </label>
-		<input type="Text"	name="Product_Name" value="<?php echo $Product[0]['Product_Name'] ?>">
-
-        <label for="Product_Code">Product Code: </label>
-		<input type="Text"	name="Product_Code" value="<?php echo $Product[0]['Product_Code'] ?>">
-
-        <label for="Product_Category">Product Category: </label>
-		<input type="Text"	name="Product_Category" value="<?php echo $Product[0]['Product_Category'] ?>">
-
-		<label for="Product_Details">Product Details: </label>
-		<Input type="Text" name="Product_Details" value="<?php echo $Product[0]['Product_Details']?>">
-
-
-		<label for="Size_Description">Price for Regular: </label>
-		<input type="Text"	name="Regular" value="<?php //echo $SizeRegular[0]['Amount']?>">
-
-        <label for="Size_Description">Price for Large: </label>
-		<input type="Text"	name="Large" value="<?php //echo $SizeLarge[0]['Amount']?>">
-
-		<label for="Size_Description">Product Extra-Large: </label>
-		<Input type="Text" name="ExtraLarge" value="<?php //echo $SizeExtra[0]['Amount']?>">
-
-		<input type ="hidden" name="hiddenpic" value=<?php echo $Product[0]['Product_Picture']?>>
-
-		<label for="Product_Picture">Product Picture source: </label>
-		<input type="file" name="Product_Picture" id="fileToUpload">
-
-		<input type="Submit"	name="Submit">
+	<table>
+		<tr>
+        <td><label for="Product_Stocks"  style= "color:black; font-size: 20px;">Product Stocks: </label></td>
+		<td><input type="Text"	name="Product_Stocks" style="font-size: 20px;" value="<?php echo $Product[0]['Product_Stocks'] ?>"></td>
+		</tr>
+		<tr>
+       <td> <label for="Product_Name" style= "color:black; font-size: 20px;" >Product Name: </label></td>
+	   <td><input type="Text"	name="Product_Name" style="font-size: 20px;" value="<?php echo $Product[0]['Product_Name'] ?>"> </td>
+		</tr>
+		<tr>
+		<td><label for="Product_Code" style= "color:black; font-size: 20px;">Product Code: </label> </td>
+		<td><input type="Text"	name="Product_Code" style="font-size: 20px;" value="<?php echo $Product[0]['Product_Code'] ?>"> </td>
+		</tr>
+		<tr>
+        <td> <label for="Product_Category" style= "color:black; font-size: 20px;">Product Category: </label> </td>
+		<td><input type="Text"	name="Product_Category" style="font-size: 20px;" value="<?php echo $Product[0]['Product_Category'] ?>"> </td>
+		</tr>
+		<tr>
+		<td><label for="Size_Description" style= "color:black;font-size: 20px;">Price for Regular: </label> </td>
+		<td><input type="Text"	name="Regular" style="font-size: 20px;" value="<?php //echo $SizeRegular[0]['Amount']?>"></td>
+		</tr>
+		<tr>
+        <td><label for="Size_Description" style= "color:black; font-size: 20px;">Price for Large: </label></td>
+		<td><input type="Text"	name="Large" style="font-size: 20px;" value="<?php //echo $SizeLarge[0]['Amount']?>"></td>
+		</tr>
+		<tr>
+		<td><label for="Size_Description" style= "color:black; font-size: 20px;">Product Extra-Large: </label></td>
+		<td><Input type="Text" name="ExtraLarge" style="font-size: 20px;" value="<?php //echo $SizeExtra[0]['Amount']?>"></td>
+		</tr>
+		<tr>	
+		<td><input type ="hidden" name="hiddenpic" value=<?php echo $Product[0]['Product_Picture']?>></td>
+		</tr>
+		<tr>
+		<td><label for="Product_Details" style= "color:black; font-size: 20px;">Product Details: </label> </td>
+		<td><Input type="Text" name="Product_Details" style="font-size: 20px;" value="<?php echo $Product[0]['Product_Details']?>"> </td>
+		</tr>
+		<tr>
+		<td><label for="Product_Picture" style= "color:black; font-size: 20px;">Product Picture source: </label></td>
+		<td><input type="file" name="Product_Picture" id="fileToUpload" style= "color:black; font-size: 20px;"></td>
+		</tr>
+		
+		<tr>
+		<td><br><input type="Submit" name="Submit"></br></td>
+		</tr>
+		</table>
 	</form>
-
+	</div>
 </body>
 <?php include "includes/footer.php" ?>
