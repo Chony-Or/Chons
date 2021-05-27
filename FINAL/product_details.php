@@ -4,7 +4,6 @@ include 'header.php';
 
 <?php 
 
-
 $server = "localhost"; // connect to sql
 $username = "root";
 $password ="";
@@ -35,14 +34,14 @@ if(isset($_GET['id']))
 }?>
 
 <head>
-  <link rel="stylesheet" href="orderSection.css" type="text/css">
+    <link rel="stylesheet" href="orderSection.css" type="text/css">
+    <link rel="stylesheet" href="http://flatlogic.github.io/awesome-bootstrap-checkbox/demo/ ..">
 </head>
 
 <body class="fixed-bg">
 
-    <br><br><br><br><br><br><br>
     <!--Milkshake Seperate Per Product Page-->
-    <div class="container" style="margin-top:30px">
+    <div class="container">
         
         <div class="row">
     
@@ -57,7 +56,7 @@ if(isset($_GET['id']))
                             <h2 style="margin-left: 7px; margin-top:5px"><?php echo $ProductMilkshake[0]['Product_Name'] ?></h2><hr style="border-top: 1px solid;">
                             <p style="font-size:15px; margin-left: 10px"><?php echo $ProductMilkshake[0]['Product_Details'] ?></p><br>
                             
-                     <form action="product_details.php" method="POST">
+                    <form action="product_details.php" method="POST">
 
                         <div style="margin-left: 7px" aria-required="true"> <b style="font-size:15px;">Available Size/s:</b><br><br>
                         
@@ -82,40 +81,46 @@ if(isset($_GET['id']))
                         <br><br></div>
  
                         <div style="margin-left: 7px " ><b style="font-size:15px;">Sugar Level/s:</b>
-                            <table border="1" style="width:100%">
+                            <table style="width:70%">
                             <tr>
-                            <td>
-                            <input type="radio" style="margin-left: 15px " id="1h" name="Sugar_Level" value="100">
-                            <label for="1h" style="font-size:13px; padding:5px">  100%   </label>
-                            </td>
-                            <td>
-                            <input type="radio" id="7payb" name="Sugar_Level" value="75">
-                            <label for="7payb" style="font-size:13px; padding:5px">   75% </label>
-                            </td>
-                            <td>
-                            <input type="radio" id="pipti" name="Sugar_Level" value="50">
-                            <label for="pipti" style="font-size:13px; padding:5px">   50% </label>
-                            </td>
-                            <td>
-                            <input type="radio" id="2payb" name="Sugar_Level" value="25">
-                            <label for="2payb" style="font-size:13px; padding:5px">   25% </label>
-                            </td>
-                            <td>
-                            <input type="radio" id="zero" name="Sugar_Level" value="0">
-                            <label for="zero" style="font-size:13px; padding:5px">   0%  </label><br>
-                            </td>
+                                <td>
+                                    <input type="radio" style="margin-left: 15px " id="1h" name="Sugar_Level" value="100">
+                                    <label for="1h" style="font-size:13px; padding:5px">  100%   </label>
+                                </td>
+                                <td>
+                                    <input type="radio" id="7payb" name="Sugar_Level" value="75">
+                                    <label for="7payb" style="font-size:13px; padding:5px">   75% </label>
+                                </td>
+                                <td>
+                                    <input type="radio" id="pipti" name="Sugar_Level" value="50">
+                                    <label for="pipti" style="font-size:13px; padding:5px">   50% </label>
+                                </td>
+                                <td>
+                                    <input type="radio" id="2payb" name="Sugar_Level" value="25">
+                                    <label for="2payb" style="font-size:13px; padding:5px">   25% </label>
+                                </td>
+                                <td>
+                                    <input type="radio" id="zero" name="Sugar_Level" value="0">
+                                    <label for="zero" style="font-size:13px; padding:5px">   0%  </label><br>
+                                </td>
                             </tr>
-                                <br><br>
+                            <br><br>
                             </table>
                         </div>
 
                         <b style="font-size:15px; margin-left: 7px ">Add ons:</b><br><br> 
                         <?php foreach ($Addons as $key => $AddonsValue): ?>        <!--addons part connected from database -->
+                            
                             <table style="width: 100%">
-                            <td><input type="checkbox" style="margin-left: 15px; margin-right: 15px" id="<?php echo $AddonsValue['Addons_Name'] ?>" name="addons[]" value="<?php echo $AddonsValue['Addons_ID'] ?>">
-                            <label for="<?php echo $AddonsValue['Addons_Name'] ?>" style="font-size:14px;  padding:5px"><?php echo $AddonsValue['Addons_Name'] ?></label></td>
-                           
-                            <td><p style="text-align:right; margin-right: 15px">+₱<?php echo $AddonsValue['Addons_Price'] ?></p></td>
+                                <td>
+                                    <label class="checkbox-circle">
+                                        <input type="checkbox" style="margin-left: 25px; margin-right: 15px" id="<?php echo $AddonsValue['Addons_Name'] ?>" name="addons[]" value="<?php echo $AddonsValue['Addons_ID'] ?>">
+                                    </label>
+                                    <label for="<?php echo $AddonsValue['Addons_Name'] ?>" style="font-size:14px;  padding:5px"><?php echo $AddonsValue['Addons_Name'] ?></label>
+                                </td>
+                                <td>
+                                    <p style="text-align:right; margin-right: 15px">+₱<?php echo $AddonsValue['Addons_Price'] ?></p>
+                                </td>
                         </table>
                      
                         <?php endforeach?> <!-- for the return value of addons name and price -->

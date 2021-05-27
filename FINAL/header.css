@@ -1,12 +1,8 @@
 /* Header Section */
 
 .navbar-light {
-    background-color: transparent !important;
+    background-color: #fadadd !important;
     transition: 0.5s ease;
-}
-
-.navbar-light.scrolled {
-    background: #fadadd !important;
 }
 
 .fixed-bg {

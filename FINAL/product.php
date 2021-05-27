@@ -32,7 +32,7 @@ if(isset($_GET['code']))
     <!--Menu Section-->
     <div class="jumbotron">
         <br>
-        <h1 class="milkshake" style="font-family: 'Fantasy'; color: #725527; margin-top: 80px; margin-left: 15%;"><?php echo $Productlist[0]["Product_Category"] ?></h1><br>
+        <h1 class="milkshake" style="font-family: 'Comfortaa'; color: #725527; margin-top: 80px; margin-left: 15%;"><?php echo $Productlist[0]["Product_Category"] ?></h1><br>
         <center><hr style="width: 71%; border-top: 1px solid black;">
     </div>
 
