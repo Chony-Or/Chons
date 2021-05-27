@@ -84,13 +84,13 @@ if (isset($_POST['Submit']))
 	<style>
 		.product-form form{
 			color: #7a7a7a;
-	border-radius: 40px;
-	width: 60%;
+	border-radius: 50px;
+	width: 39%;
 	margin-bottom: 50px;
     font-size: 20px;
     background: #ececec;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    padding: 100px;	
+    padding: 70px;	
     position:absolute;	
 		}
 		.product-form {
@@ -107,10 +107,11 @@ if (isset($_POST['Submit']))
   background-color: #7a7a7a ;
   color: white;
   padding: 14px 20px;
-  margin: 8px 0;
+  margin: 8px 116%;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
+
 }
 		</style>
 	
@@ -155,7 +156,7 @@ if (isset($_POST['Submit']))
 		<td><input type="file" name="Product_Picture" id="fileToUpload" style= "color:black"></td>
 		</tr>
 		<tr>
-	    <td><input type="Submit" name="Submit"></td>
+	    <td> <br><input type="Submit" name="Submit"></br></td>
 		</tr>
 		</table>
 	</form>
