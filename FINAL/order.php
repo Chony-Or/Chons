@@ -1,5 +1,14 @@
 <?php 
 include 'header.php';
+
+if (isset($_SESSION["customerInfo"]))
+{
+     //header("Refresh:0; url=order.php");
+}
+?>
+
+<?php 
+session_start();
 ?>
 <?php
 $server = "localhost";
@@ -8,7 +17,6 @@ $password = "";
 $DB = "lhoyzki_ordering";
 
 $connection = new mysqli($server,$username,$password,$DB);
-session_start();
 ?>
 
 <?php
@@ -78,15 +86,46 @@ if(isset($_POST['ProductId']))
     
 }
 
+
 if(isset($_SESSION["customerInfo"]['Id']))
 {
         //fetch order
+        $TotalAmount = 0;
         $customer_id = $_SESSION["customerInfo"]['Id'];
         $getCustomerOrder = "Select * from order_tbl as A Left Join product_tbl as B on B.Product_ID = A.Product_ID  where A.Customer_ID = {$customer_id} and A.Is_Active";
         $Orderlist = $connection->query($getCustomerOrder ); // execute the query to the database 
 	$Orderlist = $Orderlist->fetch_all(MYSQLI_ASSOC);
 
+        //for computation of the totalamount of order
+        foreach ($Orderlist as $key => $orderTotalAmount) 
+       {
+           $TotalAmount += $orderTotalAmount['Amount'];
+       }
+
 }
+
+//if(isset($_SESSION["customerInfo"]['Id']))
+//{
+        //fetch total amount
+
+  //      $TotalAmount = 0;
+
+   //     $customer_id = $_SESSION["customerInfo"]['Id'];
+   //     $getOrderAmount =  "Select * from order_tbl where Is_Active and Customer_ID = {$customer_id}";
+   //     $OrderAmount = $connection->query($getOrderAmount ); // execute the query to the database 
+//	$OrderAmount = $OrderAmount->fetch_all(MYSQLI_ASSOC);
+        
+       
+
+  //     foreach ($OrderAmount as $key => $orderamountVal) 
+   //     {
+    //            echo $orderamountVal[0]['Amount'];
+    //    }
+
+
+//}
+
+
 
 
 ?>
@@ -137,9 +176,10 @@ if(isset($_SESSION["customerInfo"]['Id']))
                         <?php endforeach?>
         </tbody>
         </table>
-
-        <div class="mx-auto;" style="font-size:25px; text-align:right;margin-left:67% ;margin-top:5%;margin-bottom:2%">TOTAL <b style="color:#3CB371; font-size:30px;" >₱90.00</b>
+      
+        <div class="mx-auto;" style="font-size:25px; text-align:right;margin-left:67% ;margin-top:5%;margin-bottom:2%">TOTAL: <b style="color:#3CB371; font-size:30px;" ><?php echo number_format($TotalAmount,2) ?></b>
          </div>
+         
 
         <div style = "text-align:right;">
         <a href=HomePage.php><button type="button" style="width:150px; height:40px; border-radius:4px; margin-right:5px; background-color:#8a5f56; color:white"><b>Continue Shopping</b></button></a>

@@ -84,7 +84,6 @@ hr {
     background-color: #FADADD!important;
 }
 
-}
 .page-header .page-tools {
     -ms-flex-item-align: end;
     align-self: flex-end;

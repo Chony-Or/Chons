@@ -5,21 +5,33 @@ $password = "";
 $DB = "lhoyzki_ordering";
 
 $connection = new mysqli($server,$username,$password,$DB);
+session_start();
 
-$getproduct = "Select * from order_tbl";
-$product = $connection->query($getproduct);
+if(isset($_SESSION["customerInfo"]['Id']))
+{
+        //fetch order
+        $customer_id = $_SESSION["customerInfo"]['Id'];
+        $getActiveOrder = "Select * from order_tbl where Is_Active and Customer_ID = {$customer_id}";
+        $activeOrder = mysqli_query($connection, $getActiveOrder);
+        var_dump($activeOrder);
 
-if ($product->num_rows > 0) {
-    // output data of each row
-    while($row = $product->fetch_assoc()) {
-        echo "<br> Order id: ". $row["Order_ID"]. " - Product id: ". $row["Product_ID"]. " - Customer id: " . $row["Customer_ID"] .
-        " - Size id: ". $row["Size_ID"]. " - Sugar Level: " .$row["Sugar_Level"]. "- Created by: " .$row["Created_by"].
-        "- Addons:  ". $row["Addons"]. " - Quantity: " .$row["Quantity"]. " - Total price: " .$row["Amount"].
-        " - Amount Tendered: " .$row["Amount_Tendered"]. " - Change: " .$row["Change"]. "- Date Created: " .$row["Date_Created"].
-        " - Date Deleted: " .$row["Date_Deleted"];
+    if ($activeOrder)
+    {
+        // it return number of rows in the table.
+        $row = mysqli_num_rows($activeOrder);
+          
+           if ($row)
+              {
+              echo "Number of row in the table : " . $row;
+              }
+        // close the result.
+        //mysqli_free_result($activeOrder);
     }
-} else {
-    echo "0 results";
 }
-?>
 
+?>
+<html>
+    <body>
+        <p> test: <?php echo $row ?></p>
+    </body>
+</html>
