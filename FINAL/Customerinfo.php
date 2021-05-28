@@ -51,19 +51,19 @@ if(isset($_POST['Submit']))
             </div>  
 
             <div class="form-group">
-                <input type="text" class="form-control" name="L_Name" placeholder="Firstname" required="required"><br><br>
+                <input type="text" class="form-control" name="F_Name" placeholder="Firstname" required="required"><br><br>
             </div> 
             
             <div class="form-group">
-                <input type="text" class="form-control" name="L_Name" placeholder="Phone number" required="required"><br><br>
+                <input type="text" class="form-control" name="Cust_Num" placeholder="Phone number" required="required"><br><br>
             </div> 
             
             <div class="form-group">
-                <input type="text" class="form-control" name="L_Name" placeholder="Address" required="required"><br><br>
+                <input type="text" class="form-control" name="Cust_Address" placeholder="Address" required="required"><br><br>
             </div> 
     
             <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-lg btn-block">Continue to checkout</button><br><br>
+                <button type="submit" name="Submit" class="btn btn-primary btn-lg btn-block">Continue to checkout</button><br><br>
             </div> 
 
         </form>
@@ -74,4 +74,4 @@ if(isset($_POST['Submit']))
 
 <?php 
 include 'footer.php';
-?>
+?>S
