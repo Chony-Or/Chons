@@ -63,7 +63,7 @@ if(isset($_GET['id']))
                             
                     <form action="order.php" method="POST">
 
-                        <div style="margin-left: 7px" aria-required="true"> <b style="font-size:15px;">Available Size/s:</b><br><br>
+                        <div style="margin-left: 15px" aria-required="true"><b style="font-size:15px;">Available Size/s:</b><br><br>
                         <input type="hidden" name="ProductId"  value="<?php echo $ProductMilkshake[0]['Product_ID']?>">
                         <?php foreach($ProductSize as $key => $SizeValue): ?>   <!-- get all price and sizes from the database -->
                         <table style="width: 100%">
@@ -119,15 +119,11 @@ if(isset($_GET['id']))
                             
                             <table style="width: 100%">
                                 <td>
-<<<<<<< HEAD
-                                    <input type="checkbox" style="margin-left: 25px; margin-right: 15px" id="<?php echo $AddonsValue['Addons_Name'] ?>" name="addons[]" value="<?php echo $AddonsValue['Addons_ID'] ?>">
-=======
                                     <label class="checkbox-circle">
                                         <input type="checkbox" style="margin-left: 25px; margin-right: 15px" id="<?php echo $AddonsValue['Addons_Name'] ?>" name="addons[]" value="<?php echo $AddonsValue['Addons_ID'] ?>">
                                    
                                         <input type="hidden"  name="addons_price[<?php echo $AddonsValue['Addons_ID'] ?>]" value="<?php echo $AddonsValue['Addons_Price'] ?>">
                                     </label>
->>>>>>> fe63e5f339873d7bab028eedb5f98b3d2313937d
                                     <label for="<?php echo $AddonsValue['Addons_Name'] ?>" style="font-size:14px;  padding:5px"><?php echo $AddonsValue['Addons_Name'] ?></label>
                                 </td>
                                 <td>
