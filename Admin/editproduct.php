@@ -136,13 +136,16 @@ else
   border: none;
   border-radius: 10px;
   cursor: pointer;
-
 }
-		</style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
 
 	<div class= "edit-form">
 	<form action="<?php echo "editproduct.php?id={$Id}" ?>" method="POST" enctype="multipart/form-data">
-	<table>
+	<table border= 1>
 		<tr>
         <td><label for="Product_Stocks"  style= "color:black; font-size: 20px;">Product Stocks: </label></td>
 		<td><input type="Text"	name="Product_Stocks" style="font-size: 20px;" value="<?php echo $Product[0]['Product_Stocks'] ?>"></td>
