@@ -142,9 +142,9 @@ if(isset($_SESSION["customerInfo"]['Id']))
          </div>
 
         <div style = "text-align:right;">
-        <button type="button" style="width:150px; height:40px; border-radius:4px; margin-right:5px; background-color:#8a5f56; color:white"><b>Continue Shopping</b></button>
+        <a href=HomePage.php><button type="button" style="width:150px; height:40px; border-radius:4px; margin-right:5px; background-color:#8a5f56; color:white"><b>Continue Shopping</b></button></a>
         
-        <button type="button" style="width:110px; height:40px; border-radius:4px; background-color:#8a5f56; color:white"><b>Checkout</b></button>
+        <a href=receipt.php> <button type="button" style="width:110px; height:40px; border-radius:4px; background-color:#8a5f56; color:white"><b>Checkout</b></button></a>
         </div>
 
 
