@@ -85,7 +85,7 @@ if (isset($_POST['Submit']))
 		.product-form form{
 			color: #7a7a7a;
 	border-radius: 50px;
-	width: 39%;
+	width: fit-content;
 	margin-bottom: 50px;
     font-size: 20px;
     background: #ececec;
