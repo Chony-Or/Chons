@@ -8,7 +8,7 @@ if (isset($_SESSION["customerInfo"]))
 ?>
 
 <?php 
-session_start();
+//session_start();
 ?>
 <?php
 $server = "localhost";
