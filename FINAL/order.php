@@ -18,6 +18,7 @@ if (!isset($_SESSION["customerInfo"]))
         header("Location: Customerinfo.php");
 }
 // var_dump($_SESSION["customerInfo"]);
+
 if(isset($_POST['ProductId']))
 {
   var_dump($_SESSION["customerInfo"]);
@@ -81,11 +82,12 @@ if(isset($_SESSION["customerInfo"]['Id']))
 {
         //fetch order
         $customer_id = $_SESSION["customerInfo"]['Id'];
-        $getCustomerOrder = "Select * from order_tbl as A Left Join product_tbl as B on B.Product_ID = A.Product_ID  where A.Customer_ID = {$customer_id}";
+        $getCustomerOrder = "Select * from order_tbl as A Left Join product_tbl as B on B.Product_ID = A.Product_ID  where A.Customer_ID = {$customer_id} and A.Is_Active";
         $Orderlist = $connection->query($getCustomerOrder ); // execute the query to the database 
 	$Orderlist = $Orderlist->fetch_all(MYSQLI_ASSOC);
 
 }
+
 
 ?>
 <head>
@@ -124,8 +126,12 @@ if(isset($_SESSION["customerInfo"]['Id']))
                                         </th>
                                 
                                         <th style="text-align: center; margin-top:15px; "><br>₱<?php echo $OrderlistVal['Amount']?>
-                                                <button type="button" style="margin-left:10px;padding: 0;border: none;background: none; " onclick="deleteRow(this)">
-                                                <i class="material-icons">delete</i></button>
+                                        
+                        
+                                        <a  href="deleteOrder.php?id=<?php echo $OrderlistVal['Order_ID'] ?>" style="margin-left:10px;padding: 0;border: none;background: none; ">
+                                        <i class="material-icons">delete</i></a>
+                                        
+                                      
                                         </th>
                                 </tr>
                         <?php endforeach?>
@@ -143,11 +149,11 @@ if(isset($_SESSION["customerInfo"]['Id']))
 
 
 
-        <script>
-        function deleteRow(btn) 
+       <script>
+       // function deleteRow(btn) 
         {
-        var row = btn.parentNode.parentNode;
-        row.parentNode.removeChild(row);
+       // var row = btn.parentNode.parentNode;
+        //row.parentNode.removeChild(row);
         }
 	</script>
         
