@@ -142,39 +142,55 @@ if(isset($_SESSION["customerInfo"]['Id']))
 
                 <h2 style="font-family: 'Courier';">SHOPPING CART</h2>
 
-                <table class="table table-hover" border=0px>
+        <table class="table table-hover">
                 
-                <tr style="font-weight:900; font-size:14px; color: white; background-color:#8a5f56">
-                        <th>Product</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Total</th>
+                <tr style="color: white; background-color:#8a5f56">
+                        <th><p style="margin-left:20px;font-size:18px;font-weight:500;">Product</p></th>
+                        <th><p style="text-align:center;font-size:18px;font-weight:500;">Price</p></th>
+                        <th><p style="text-align:center;font-size:18px;font-weight:500;">Quantity</p></th>
+                        <th><p style="text-align:center;font-size:18px;font-weight:500;">Total</p></th>
+                        <th></th>
                 </tr>
         
                 <tbody id="table">
                         <?php foreach($Orderlist as $key => $OrderlistVal):?>
                                 <tr style="font-weight:900; font-size:14px; ">
                                 
-                                        <th><img src="<?php echo $OrderlistVal['Product_Picture']?>" style="width:80px; height:80px;" ><?php echo $OrderlistVal['Product_Name']?></th>
-                                        <th style="text-align: center"><br><br>₱<?php echo $OrderlistVal['Amount']/$OrderlistVal['Quantity']?></th>
-                                        <th style="text-align: center"><br><br>
-                                                <!-- <button class="quant"  type="button" style="margin-left: 4px "  onclick="decrement()"><b>-</b></button> -->
-                                                <input style="text-align:center; width: 30% ; height: 28px; " id=Input type=number min=1 max=100 value="<?php echo $OrderlistVal['Quantity']?>">
-                                                <!-- <button class="quant" type="button" onclick="increment()"><b>+</b></button> -->
-                        
-                                        </th>
-                                
-                                        <th style="text-align: center; margin-top:15px; "><br>₱<?php echo $OrderlistVal['Amount']?>
+                                        <td>
+                                        <img src="<?php echo $OrderlistVal['Product_Picture']?>" style="width:80px; height:80px;" ><?php echo $OrderlistVal['Product_Name']?>
+                                        </td>
+
+                                        <td>
+                                        <p style="text-align:center;position:relative;;margin-top:30px; " >
+                                        ₱<?php echo $OrderlistVal['Amount']/$OrderlistVal['Quantity']?>
+                                        </p>
+                                        </td>
+
+                                        <td>
                                         
-                        
-                                        <a  href="deleteOrder.php?id=<?php echo $OrderlistVal['Order_ID'] ?>" style="margin-left:10px;padding: 0;border: none;background: none; ">
+                                                <p style="text-align:center;position:relative;;margin-top:30px; " >
+                                                <?php echo $OrderlistVal['Quantity']?>
+                                                </p>
+                                               
+                                        </td>
+                                
+                                        <td>
+                                        <p style="text-align:center;position:relative;;margin-top:30px; " >
+                                        ₱<?php echo $OrderlistVal['Amount']?>
+                                        </p>
+                                        
+                                        <td>
+                                        <p style="position:relative;;margin-top:30px; " >
+                                        <a  href="deleteOrder.php?id=<?php echo $OrderlistVal['Order_ID'] ?>" >
                                         <i class="material-icons">delete</i></a>
+                                        </p>
+                                        </td>
                                         
                                       
                                         </th>
                                 </tr>
                         <?php endforeach?>
-        </tbody>
+                </tbody>
         </table>
       
         <div class="mx-auto;" style="font-size:25px; text-align:right;margin-left:67% ;margin-top:5%;margin-bottom:2%">TOTAL: <b style="color:#3CB371; font-size:30px;" ><?php echo number_format($TotalAmount,2) ?></b>
