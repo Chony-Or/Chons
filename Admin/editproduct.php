@@ -109,14 +109,14 @@ else
 
 <style>
 		.edit-form form{
-			color: #7a7a7a;
+	color: #7a7a7a;
 	border-radius: 50px;
 	width:fit-content;
 	margin-bottom: 50px;
     background: #ececec;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     padding: 50px;	
-    position:absolute;	
+    position:relative;	
 		}
 		.edit-form {
 	height: 100%;
@@ -136,13 +136,16 @@ else
   border: none;
   border-radius: 10px;
   cursor: pointer;
-
 }
-		</style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
 
 	<div class= "edit-form">
 	<form action="<?php echo "editproduct.php?id={$Id}" ?>" method="POST" enctype="multipart/form-data">
-	<table>
+	<table border= 1>
 		<tr>
         <td><label for="Product_Stocks"  style= "color:black; font-size: 20px;">Product Stocks: </label></td>
 		<td><input type="Text"	name="Product_Stocks" style="font-size: 20px;" value="<?php echo $Product[0]['Product_Stocks'] ?>"></td>
