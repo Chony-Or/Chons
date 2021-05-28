@@ -82,17 +82,10 @@ if (isset($_POST['Submit']))
 ?>
 <body>
 	<style>
-<<<<<<< HEAD
-		.product-form form{
-			color: #7a7a7a;
-	border-radius: 50px;
-	width: fit-content;
-=======
 .product-form form{
 	color: #7a7a7a;
 	border-radius: 40px;
 	width: 60%;
->>>>>>> e94f2ca938c049a110630a5cc8af18c904d4cee6
 	margin-bottom: 50px;
     font-size: 20px;
     background: #ececec;
