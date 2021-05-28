@@ -6,7 +6,6 @@
 	$getProduct = "Select * from product_tbl where Is_Active";
 	$Product = $connection->query($getProduct);
 	$Product = $Product->fetch_all(MYSQLI_ASSOC);
-
  ?>
  
 <body>

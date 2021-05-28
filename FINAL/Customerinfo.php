@@ -1,6 +1,9 @@
 <?php 
 include 'header.php';
 ?>
+<?php
+session_start();
+?>
 
 <?php 
 
@@ -13,16 +16,18 @@ $connection = new mysqli($server,$username,$password,$DB);
 
 if(isset($_POST['Submit']))
 {
-    $L_Name = $_POST["L_Name"];
-    $F_Name = $_POST["F_Name"];
-    $Cust_Num = $_POST["Cust_Num"];
-    $Cust_Address = $_POST["Cust_Address"];
+    $_SESSION['customerInfo'] = array ("L_Name"=>$_POST["L_Name"],"F_Name"=>$_POST["F_Name"],"Cust_Num"=>$_POST["Cust_Num"],"Cust_Address"=> $_POST["Cust_Address"]);
+    header("Location: HomePage.php");
+    //$L_Name = $_POST["L_Name"];
+    //$F_Name = $_POST["F_Name"];
+    //$Cust_Num = $_POST["Cust_Num"];
+    //$Cust_Address = $_POST["Cust_Address"];
 
-    $sqlvar = "INSERT INTO customer_tbl(L_Name,F_Name,Cust_Num,Cust_Address) VALUES
-    ('{$L_Name}','{$F_Name}','{$Cust_Num}','{$Cust_Address}')";
+    //$sqlvar = "INSERT INTO customer_tbl(L_Name,F_Name,Cust_Num,Cust_Address) VALUES
+    //('{$L_Name}','{$F_Name}','{$Cust_Num}','{$Cust_Address}')";
 
-    var_dump($connection->query($sqlvar));
-    var_dump($sqlvar);
+    //var_dump($connection->query($sqlvar));
+    //var_dump($sqlvar);
 }
 ?>
 

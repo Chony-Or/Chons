@@ -11,6 +11,11 @@ $DB = "lhoyzki_ordering";
 
 $connection = new mysqli($server,$username,$password,$DB);// connection
 
+if(isset($_GET['submit']))
+{
+    
+}
+
 if(isset($_GET['id']))
 {
 
@@ -56,16 +61,19 @@ if(isset($_GET['id']))
                     <br><h2 style="margin-left: 15px"><?php echo $ProductMilkshake[0]['Product_Name'] ?></h2><br>
                     <p style="margin-left: 15px; font-size: 14px; "><?php echo $ProductMilkshake[0]['Product_Details'] ?></p><br>
                             
-                    <form action="product_details.php" method="POST">
+                    <form action="order.php" method="POST">
 
-                        <div style="margin-left: 15px" aria-required="true"><b style="font-size:15px;">Available Size/s:</b><br><br>
-                        
-                            <?php foreach($ProductSize as $key => $SizeValue): ?>   <!-- get all price and sizes from the database -->
-                            <table style="width: 100%">
-                                <td><input type="radio" style="margin-left: 15px; margin-right: 15px" name="sizes" id="<?php echo $SizeValue['Size_Description'] ?>" value="<?php echo $SizeValue['Size_ID'] ?>">
-                                <label for="<?php echo $SizeValue['Size_Description'] ?>" style="font-size: 14px; padding: 5px"><?php echo $SizeValue['Size_Description'] ?></label></td>
-                                <td><p style="text-align: right; margin-right: 15px">+₱<?php echo $SizeValue['Amount'] ?></p></td>
-                            </table>
+                        <div style="margin-left: 7px" aria-required="true"> <b style="font-size:15px;">Available Size/s:</b><br><br>
+                        <input type="hidden" name="ProductId"  value="<?php echo $ProductMilkshake[0]['Product_ID']?>">
+                        <?php foreach($ProductSize as $key => $SizeValue): ?>   <!-- get all price and sizes from the database -->
+                        <table style="width: 100%">
+                            <td>
+                                <input type="hidden" name="SizePrice[<?php echo $SizeValue['Size_ID'] ?>]"  value="<?php echo $SizeValue['Amount'] ?>">
+                                <input type="radio" style="margin-left: 15px; margin-right: 15px" name="sizes" id="<?php echo $SizeValue['Size_Description'] ?>" value="<?php echo $SizeValue['Size_ID'] ?>">
+                                <label for="<?php echo $SizeValue['Size_Description'] ?>" style="font-size:14px;  padding:5px"><?php echo $SizeValue['Size_Description'] ?></label></td>
+                           
+                            <td><p style="text-align:right; margin-right: 15px">+₱<?php echo $SizeValue['Amount'] ?></p></td>
+                        </table>
 
                             <?php endforeach ?>
                             <!--
@@ -111,7 +119,15 @@ if(isset($_GET['id']))
                             
                             <table style="width: 100%">
                                 <td>
+<<<<<<< HEAD
                                     <input type="checkbox" style="margin-left: 25px; margin-right: 15px" id="<?php echo $AddonsValue['Addons_Name'] ?>" name="addons[]" value="<?php echo $AddonsValue['Addons_ID'] ?>">
+=======
+                                    <label class="checkbox-circle">
+                                        <input type="checkbox" style="margin-left: 25px; margin-right: 15px" id="<?php echo $AddonsValue['Addons_Name'] ?>" name="addons[]" value="<?php echo $AddonsValue['Addons_ID'] ?>">
+                                   
+                                        <input type="hidden"  name="addons_price[<?php echo $AddonsValue['Addons_ID'] ?>]" value="<?php echo $AddonsValue['Addons_Price'] ?>">
+                                    </label>
+>>>>>>> fe63e5f339873d7bab028eedb5f98b3d2313937d
                                     <label for="<?php echo $AddonsValue['Addons_Name'] ?>" style="font-size:14px;  padding:5px"><?php echo $AddonsValue['Addons_Name'] ?></label>
                                 </td>
                                 <td>
@@ -124,7 +140,7 @@ if(isset($_GET['id']))
                    
                         <br><b for="quan" style="font-size:15px; margin-left: 15px">Quantity :</b>
                         <button class="quant" type="button" style="margin-left: 4px "  onclick="decrement()"><b>-</b></button>
-                        <input style="text-align:center; width: 15% ; height: 25px;" id=Input type=number min=1 max=100 value=1>
+                        <input name="Quantity" style="text-align:center; width: 15% ; height: 25px;" id=Input type=number min=1 max=100 value=1>
                         <button class="quant" type="button" onclick="increment()"><b>+</b></button>
 
 						<script>
@@ -136,8 +152,8 @@ if(isset($_GET['id']))
 						}
 						</script>
 							
-                            <button class="addcart"  type="submit">
-                            <a class="nav-link" href="milkshAvocado.php" ><img src="https://img.icons8.com/material-rounded/22/000000/shopping-cart.png"/>ADD TO CART</a></button><br><br>
+                            <button class="addcart"  type="submit" value="submit">
+                            <a class="nav-link">  <img src="https://img.icons8.com/material-rounded/22/000000/shopping-cart.png"/>ADD TO CART</a></button><br><br>
 							
                         </div>
                     </form>

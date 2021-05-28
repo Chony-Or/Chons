@@ -1,5 +1,9 @@
 <?php 
 include 'header.php';
+
+?>
+<?php 
+session_start();
 ?>
 <head>
     <link rel="stylesheet" href="HomePage.css" type="text/css">

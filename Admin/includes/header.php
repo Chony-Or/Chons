@@ -7,9 +7,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
-</head>    
+</head> 
+<style>
+
+</style>
+
     <section id="Header" style="margin-bottom:80px">
-        <nav class="navbar navbar-expand-xl fixed-top navbar-dark bg-dark" style= "box-shadow: -1px 1px  1.25rem #70c5c0;" >
+        <nav class="navbar navbar-expand-xl fixed-top navbar-dark bg-dark" style=" box-shadow: -1px -1px  1.25rem #70c5c0;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="main.php"><img src="img/adminlogo.png" style="margin-left: 60px;" width="default" height="60"></a>
                 <button class="navbar-toggler" data-toggle="collapse" data-target="#NAVBAR" >
@@ -37,6 +41,7 @@
                             <a class="nav-link" href="admin.php">
                             <img src="https://img.icons8.com/color/48/000000/in-app-messaging.png"style="width: 43px; height:43px"/>
                             </a>
+                            
                         </li>
            
                     </ul>

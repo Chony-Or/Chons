@@ -34,7 +34,7 @@ if (isset($_POST['Submit']))
 		.edit-add form{
 			color: #7a7a7a;
 	border-radius: 50px;
-	width: 30%;
+	width:fit-content;
 	margin-bottom: 50px;
     background: #ececec;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);

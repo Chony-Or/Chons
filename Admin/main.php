@@ -11,17 +11,33 @@ img {
   margin-right: auto;
  
 }
+h1,p{
+    color: black;
 
+}
+h1{
+    font-size: 35px;
+}
+p{
+    font-size: 15px;
+}
+.text{
+margin-top: 9%;
+color:black;
+text-align: center;
+font-weight: bold;
+}
 </style>
 </head>
+
 <body>
+<img src="img/logo.png" style="float: center; padding: 70px 1px 25px 9px;" width="20%"  >
+<center><h1>Welcome to Lhoyzki Admin</h1>
+<p class="p1">This website was designed specifcally for the Admin users.<br>Moreover, Admin Users have the control to access all the functionalities of this website.</p></center>
+<p class="text"> "Admin website aims to give overall control it could be in database or for monitoring purposes"</p>
 
-<img id="mainlogo" src="img/logo.png" style="float: center; padding: 75px 9px 31px 9px;" width="20%"  >
+<img class="src="img/logo.png" style="float: center; padding: 70px 1px 25px 9px;" width="20%"  >
 
-<center><h1 style="color:black" >Welcome to Lhoyzki Admin Interface</h1></center>
-<center><p style="color:black">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
- Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br>
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p></center>
 
 </body>
 </html>

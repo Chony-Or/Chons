@@ -1,3 +1,42 @@
+
+<?php
+$server = "localhost";
+$username = "root";
+$password = "";
+$DB = "lhoyzki_ordering";
+
+$connection = new mysqli($server,$username,$password,$DB);
+session_start();
+?>
+
+<?php
+
+
+if(isset($_SESSION["customerInfo"]['Id']))
+{
+        //fetch order
+        $customer_id = $_SESSION["customerInfo"]['Id'];
+        $getActiveOrder = "Select * from order_tbl where Is_Active and Customer_ID = {$customer_id}";
+        $activeOrder = mysqli_query($connection, $getActiveOrder);
+        var_dump($activeOrder);
+
+    if ($activeOrder)
+    {
+        // it return number of rows in the table.
+        $row = mysqli_num_rows($activeOrder);
+          
+           if ($row)
+              {
+              echo "Number of row in the table : " . $row;
+              }
+        // close the result.
+        //mysqli_free_result($activeOrder);
+    }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <php lang="en">
 
@@ -17,7 +56,7 @@
 <section id="header">
         <nav class="navbar navbar-expand-xl fixed-top navbar-light">
             <div class="container">
-            <a class="navbar-brand" href="#header"><img id="navbarBrand" src="img/coloredlogo.png" style="margin-left: 30px;" width="90" height="60"><span>Lhoyzki</span></a>
+            <a class="navbar-brand" href="HomePage.php"><img id="navbarBrand" src="img/coloredlogo.png" style="margin-left: 30px;" width="90" height="60"><span>Lhoyzki</span></a>
                 <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
                 <span class="navbar-toggler-icon"></span>
                 </button>
@@ -48,7 +87,7 @@
                             <a class="nav-link" href="order.php">
                                 <img src="https://img.icons8.com/dotty/40/000000/add-shopping-cart.png"/>
                                 <div class="addcart-icon">
-                                    <center><span class="addcart-text">0</span>
+                                    <center><span class="addcart-text"><?php echo $row ?></span>
                                 </div>
                             </a>
                         </li>
@@ -57,14 +96,6 @@
             </div>
         </nav>
     </section>
-    <!--End Header-->
-
-    <!--
-    <script>
-        $(window).scroll(function() {
-        $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
-        });
-    </script>*-->
 
 </html>
 
