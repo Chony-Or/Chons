@@ -19,9 +19,8 @@
                 <button class="navbar-toggler" data-toggle="collapse" data-target="#NAVBAR" >
                     <span class="navbar-toggler-icon"></span> 
                 </button>
-      
     
-                <div class="collapse navbar-collapse " id="NAVBAR" >
+                <div class="collapse navbar-collapse" id="NAVBAR" >
 
                     <ul class="navbar-nav ms-auto" style ="font-size:1.3em; text-align:right">
                     
@@ -37,17 +36,19 @@
                             <a class="nav-link" href="addonslist.php">ADDONS</a>
                         </li>
 
+                        <li class="nav-item">   
+                            <a class="nav-link" href="salesreport.php">SALES</a>
+                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="admin.php">
-                            <img src="https://img.icons8.com/color/48/000000/in-app-messaging.png"style="width: 43px; height:43px"/>
+                                <img src="https://img.icons8.com/color/48/000000/in-app-messaging.png"style="width: 43px; height:43px"/>
                             </a>
-                            
                         </li>
            
                     </ul>
                 </div> 
                 
-
             </div>
         </nav>
 </section>
