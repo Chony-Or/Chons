@@ -57,15 +57,15 @@ if (isset($_POST['Submit']))
 			if ($connection->query($sqlvar) === TRUE) {
 				$last_id = $connection->insert_id;
 				
-				$insertRegular = "INSERT INTO size_tbl(Product_ID, Amount, Size_Description) VALUES
+				$insertRegular = "INSERT INTO size_tbl(Product_IDP, Amount, Size_Description) VALUES
 				('{$last_id}','{$Size_Regular}','REGULAR')";
 
 				
-				$insertLarge = "INSERT INTO size_tbl(Product_ID, Amount, Size_Description) VALUES
+				$insertLarge = "INSERT INTO size_tbl(Product_IDP, Amount, Size_Description) VALUES
 				('{$last_id}','{$Size_Large}','LARGE')";
 
 				
-				$insertExtra = "INSERT INTO size_tbl(Product_ID, Amount, Size_Description) VALUES
+				$insertExtra = "INSERT INTO size_tbl(Product_IDP, Amount, Size_Description) VALUES
 				('{$last_id}','{$Size_Extra}','EXTRA LARGE')";
 
 				$connection->query($insertRegular);

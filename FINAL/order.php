@@ -65,7 +65,7 @@ if(isset($_POST['ProductId']))
 
 
         $order_details = array(
-                                'Product_ID'=> $_POST['ProductId'],
+                                'Product_IDP'=> $_POST['ProductId'],
                                 'Customer_ID'=>$_SESSION["customerInfo"]['Id'],
                                 'Size_ID'=>$_POST['sizes'],
                                 'Sugar_Level'=>$_POST['Sugar_Level'],
@@ -78,7 +78,7 @@ if(isset($_POST['ProductId']))
         
         $order_info = implode("','",$order_details ); 
 
-        $insertOrder = "INSERT INTO `order_tbl`( `Product_ID`, `Customer_ID`, `Size_ID`, `Sugar_Level`,  `Addons`, `Quantity`, `Amount`) 
+        $insertOrder = "INSERT INTO `order_tbl`( `Product_IDP`, `Customer_ID`, `Size_ID`, `Sugar_Level`,  `Addons`, `Quantity`, `Amount`) 
                         VALUES ('{$order_info}')";
         $connection->query($insertOrder);
         
@@ -92,7 +92,7 @@ if(isset($_SESSION["customerInfo"]['Id']))
         //fetch order
         $TotalAmount = 0;
         $customer_id = $_SESSION["customerInfo"]['Id'];
-        $getCustomerOrder = "Select * from order_tbl as A Left Join product_tbl as B on B.Product_ID = A.Product_ID  where A.Customer_ID = {$customer_id} and A.Is_Active";
+        $getCustomerOrder = "Select * from order_tbl as A Left Join product_tbl as B on B.Product_IDP = A.Product_IDP  where A.Customer_ID = {$customer_id} and A.Is_Active";
         $Orderlist = $connection->query($getCustomerOrder ); // execute the query to the database 
 	$Orderlist = $Orderlist->fetch_all(MYSQLI_ASSOC);
 

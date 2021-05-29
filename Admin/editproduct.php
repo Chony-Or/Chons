@@ -5,10 +5,10 @@
 if (isset($_GET['id']))
 {
 	$Id = $_GET['id'];
-	$getProduct = "Select * from product_tbl where Is_Active and Product_ID = {$Id}";
-	$getRegular = "Select * from size_tbl where Is_Active and Product_ID = {$Id} and Size_Description = 'REGULAR'";
-	$getLarge = "Select * from size_tbl where Is_Active and Product_ID = {$Id} and Size_Description = 'LARGE'";
-	$getExtra = "Select * from size_tbl where Is_Active and Product_ID = {$Id} and Size_Description = 'EXTRA LARGE'";
+	$getProduct = "Select * from product_tbl where Is_Active and Product_IDP = {$Id}";
+	$getRegular = "Select * from size_tbl where Is_Active and Product_IDP = {$Id} and Size_Description = 'REGULAR'";
+	$getLarge = "Select * from size_tbl where Is_Active and Product_IDP = {$Id} and Size_Description = 'LARGE'";
+	$getExtra = "Select * from size_tbl where Is_Active and Product_IDP = {$Id} and Size_Description = 'EXTRA LARGE'";
 
 		
 	$Product = $connection->query($getProduct);
@@ -63,26 +63,26 @@ else
 
 	$Product_Picture = $_FILES["Product_Picture"]["tmp_name"] != ""?$Product_Picture:$hdPic ;
 
-	$sqlvar ="UPDATE product_tbl SET Product_Picture = '{$Product_Picture}', Product_Stocks = '{$Product_Stocks}',Product_Name ='{$Product_Name}',Product_Code ='{$Product_Code}',Product_Category ='{$Product_Category}',Product_Details ='{$Product_Details}' WHERE Product_ID = {$Id}";
+	$sqlvar ="UPDATE product_tbl SET Product_Picture = '{$Product_Picture}', Product_Stocks = '{$Product_Stocks}',Product_Name ='{$Product_Name}',Product_Code ='{$Product_Code}',Product_Category ='{$Product_Category}',Product_Details ='{$Product_Details}' WHERE Product_IDP = {$Id}";
 	$connection->query($sqlvar);
 
 
 	if (count($SizeRegular))
 	{
-		$insertRegular = "UPDATE size_tbl SET Amount = '{$Size_Regular}'  WHERE Product_ID = {$Id} and Size_Description = 'REGULAR'";
+		$insertRegular = "UPDATE size_tbl SET Amount = '{$Size_Regular}'  WHERE Product_IDP = {$Id} and Size_Description = 'REGULAR'";
 	}
 	else{
-		$insertRegular = "INSERT INTO size_tbl(Product_ID, Amount, Size_Description) VALUES
+		$insertRegular = "INSERT INTO size_tbl(Product_IDP, Amount, Size_Description) VALUES
 		('{$Id}','{$Size_Regular}','REGULAR')";
 	}
 	$connection->query($insertRegular);
 
 	if (count($SizeLarge))
 	{
-		$insertLarge = "UPDATE size_tbl SET Amount = '{$Size_Large}'  WHERE Product_ID = {$Id} and Size_Description = 'LARGE'";
+		$insertLarge = "UPDATE size_tbl SET Amount = '{$Size_Large}'  WHERE Product_IDP = {$Id} and Size_Description = 'LARGE'";
 	}
 	else{
-		$insertLarge = "INSERT INTO size_tbl(Product_ID, Amount, Size_Description) VALUES
+		$insertLarge = "INSERT INTO size_tbl(Product_IDP, Amount, Size_Description) VALUES
 		('{$Id}','{$Size_Large}','LARGE')";
 	}
 	$connection->query($insertLarge);
@@ -90,17 +90,17 @@ else
 	
 	if (count($SizeExtra))
 	{
-		$insertExtra = "UPDATE size_tbl SET Amount = '{$Size_Extra}'  WHERE Product_ID = {$Id} and Size_Description = 'EXTRA LARGE'";
+		$insertExtra = "UPDATE size_tbl SET Amount = '{$Size_Extra}'  WHERE Product_IDP = {$Id} and Size_Description = 'EXTRA LARGE'";
 	}
 	else{
-		$insertExtra = "INSERT INTO size_tbl(Product_ID, Amount, Size_Description) VALUES
+		$insertExtra = "INSERT INTO size_tbl(Product_IDP, Amount, Size_Description) VALUES
 		('{$Id}','{$Size_Extra}','EXTRA LARGE')";
 	}
 	$connection->query($insertExtra);
 	
 }
 
-	$getProduct = "Select * from product_tbl where Is_Active and Product_ID = {$Id}";
+	$getProduct = "Select * from product_tbl where Is_Active and Product_IDP = {$Id}";
 	$Product = $connection->query($getProduct);
 	$Product = $Product->fetch_all(MYSQLI_ASSOC);
 }

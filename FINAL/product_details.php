@@ -25,16 +25,16 @@ if(isset($_GET['id']))
 	$Addons = $connection->query($getAddons); // query to get all information from database
 	$Addons = $Addons->fetch_all(MYSQLI_ASSOC);
 
-    $getProductMilkshake = "Select * from product_tbl where Is_Active and Product_ID =  {$Id} ";
+    $getProductMilkshake = "Select * from product_tbl where Is_Active and Product_IDP =  {$Id} ";
 	$ProductMilkshake = $connection->query($getProductMilkshake );  // query to get all information from database
 	$ProductMilkshake = $ProductMilkshake->fetch_all(MYSQLI_ASSOC);
 
-    $getProductSize = "Select * from size_tbl where Is_Active and Product_ID =  {$Id} ";
+    $getProductSize = "Select * from size_tbl where Is_Active and Product_IDP =  {$Id} ";
 	$ProductSize = $connection->query($getProductSize );  // query to get all information from database
 	$ProductSize = $ProductSize->fetch_all(MYSQLI_ASSOC);
 
-    //$getOrder = "INSERT INTO order_tbl(Order_ID,Product_ID,Customer_ID,Size_ID,Sugar_Level,Created_by,Addons,Quantity,Amount) VALUES
-    //('{$Order_ID}','{$Product_ID}','{$Customer_ID}','{$Size_ID}','{$Sugar_Level}','{$Created_by}','{$Addons}','{$Quantity}','{$Amount}')";
+    //$getOrder = "INSERT INTO order_tbl(Order_ID,Product_IDP,Customer_ID,Size_ID,Sugar_Level,Created_by,Addons,Quantity,Amount) VALUES
+    //('{$Order_ID}','{$Product_IDP}','{$Customer_ID}','{$Size_ID}','{$Sugar_Level}','{$Created_by}','{$Addons}','{$Quantity}','{$Amount}')";
    // $Order = $connection->query($getOrder); // query for the orders all data will be inserted to order_tbl databse
 }?>
 
@@ -64,7 +64,7 @@ if(isset($_GET['id']))
                     <form action="order.php" method="POST">
 
                         <div style="margin-left: 15px" aria-required="true"><b style="font-size:15px;">Available Size/s:</b><br><br>
-                        <input type="hidden" name="ProductId"  value="<?php echo $ProductMilkshake[0]['Product_ID']?>">
+                        <input type="hidden" name="ProductId"  value="<?php echo $ProductMilkshake[0]['Product_IDP']?>">
                         <?php foreach($ProductSize as $key => $SizeValue): ?>   <!-- get all price and sizes from the database -->
                         <table style="width: 100%">
                             <td>

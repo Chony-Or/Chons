@@ -49,7 +49,7 @@ if(isset($_GET['code']))
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-body">
-                        <a href="product_details.php?id=<?php echo $MilkshakeValue['Product_ID']?>">
+                        <a href="product_details.php?id=<?php echo $MilkshakeValue['Product_IDP']?>">
 
                             <img src="<?php echo $MilkshakeValue['Product_Picture']?>" class="centerimage">
 

@@ -28,8 +28,8 @@
 			<td><?php echo $ProductValue['Product_Stocks'] ?></td>
 			<td>
 			
-			<a class="btn btn-warning" href="editproduct.php?id=<?php echo $ProductValue['Product_ID']  ?>">EDIT</a>
-			<a class="btn btn-danger" href="deleteproduct.php?id=<?php echo $ProductValue['Product_ID'] ?>">DELETE</a>
+			<a class="btn btn-warning" href="editproduct.php?id=<?php echo $ProductValue['Product_IDP']  ?>">EDIT</a>
+			<a class="btn btn-danger" href="deleteproduct.php?id=<?php echo $ProductValue['Product_IDP'] ?>">DELETE</a>
 				
 			</td>
 		</tr>
