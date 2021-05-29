@@ -1,4 +1,5 @@
  <!--Footer Section-->
+
  <section id="about">
         <footer class="page-footer pt-4" style="background-color: #ddadaf;">
             <div class="container-fluid text-center text-md-left">
@@ -99,7 +100,8 @@
     <!--End Footer-->
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function() 
+        {
 
             $('.col-md-4, .card').hover(
                 function() {
@@ -116,7 +118,32 @@
         });
         function myFunction() {
             alert("Thank you!!!");
-    }
+        }
+        <?php
+        if(isset($_SESSION["customerInfo"]['Id']))
+        {
+                //fetch order
+                $customer_id = $_SESSION["customerInfo"]['Id'];
+                $getActiveOrder = "Select * from order_tbl where Is_Active and Customer_ID = {$customer_id}";
+                $activeOrder = mysqli_query($connection, $getActiveOrder);
+      
+
+            if ($activeOrder)
+            {
+                // it return number of rows in the table.
+                $row = mysqli_num_rows($activeOrder);
+                
+                if ($row)
+                    {
+                    echo "$('#count').html($row)";
+                    }
+                // close the result.
+                //mysqli_free_result($activeOrder);
+            }
+        }
+            
+        ?>
+
     </script>
 
 </html>

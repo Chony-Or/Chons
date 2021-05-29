@@ -1,3 +1,42 @@
+<?php
+$server = "localhost";
+$username = "root";
+$password = "";
+$DB = "lhoyzki_ordering";
+
+$connection = new mysqli($server,$username,$password,$DB);
+session_start();
+?>
+
+<?php
+
+if (isset($_SESSION["customerInfo"]['id'])) 
+{
+    $id = $_SESSION["customerInfo"]['id'];
+
+	$sqlvar ="UPDATE customer_tbl SET Is_Checkout = 1 WHERE Product_IDP = $id";
+
+	$connection->query($sqlvar);
+}
+
+if(isset($_SESSION["customerInfo"]['Id']))
+{
+        //fetch order
+        $TotalAmount = 0;
+        $customer_id = $_SESSION["customerInfo"]['Id'];
+        $getCustomerOrder = "Select * from order_tbl as A Left Join product_tbl as B on B.Product_IDP = A.Product_IDP  where A.Customer_ID = {$customer_id} and A.Is_Active";
+        $Orderlist = $connection->query($getCustomerOrder ); // execute the query to the database 
+	    $Orderlist = $Orderlist->fetch_all(MYSQLI_ASSOC);
+
+        //for computation of the totalamount of order
+        foreach ($Orderlist as $key => $orderTotalAmount) 
+       {
+           $TotalAmount += $orderTotalAmount['Amount'];
+       }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -323,3 +362,6 @@ hr {
 </script>
 </body>
 </html>
+<?php 
+session_destroy();
+?>

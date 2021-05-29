@@ -3,7 +3,7 @@ include 'header.php';
 
 if (isset($_SESSION["customerInfo"]))
 {
-     //header("Refresh:0; url=order.php");
+    // header("Refresh:0; url=order.php");
 }
 ?>
 
@@ -11,12 +11,12 @@ if (isset($_SESSION["customerInfo"]))
 //session_start();
 ?>
 <?php
-$server = "localhost";
-$username = "root";
-$password = "";
-$DB = "lhoyzki_ordering";
+// $server = "localhost";
+// $username = "root";
+// $password = "";
+// $DB = "lhoyzki_ordering";
 
-$connection = new mysqli($server,$username,$password,$DB);
+// $connection = new mysqli($server,$username,$password,$DB);
 ?>
 
 <?php
@@ -27,6 +27,9 @@ if (!isset($_SESSION["customerInfo"]))
 }
 // var_dump($_SESSION["customerInfo"]);
 
+
+
+// INPUT TO CUSTOMER DATABASE TABLE
 if(isset($_POST['ProductId']))
 {
   var_dump($_SESSION["customerInfo"]);
@@ -47,6 +50,10 @@ if(isset($_POST['ProductId']))
         $_SESSION["customerInfo"]['Id'] = $connection->insert_id; //get Customer Id then create session that hold the customer id
   }
 
+
+
+// INSERT ORDER TO DATABASE
+
   if(isset($_SESSION["customerInfo"]['Id']))
   {
         //insert order
@@ -56,6 +63,7 @@ if(isset($_POST['ProductId']))
         $amount = 0;
         $adonsAmount = 0;
 
+        // for getting the total amount for the addons 
        foreach ($adons as $key => $adonVal) 
        {
            $adonsAmount += $addons_price[$adonVal];
@@ -81,6 +89,7 @@ if(isset($_POST['ProductId']))
         $insertOrder = "INSERT INTO `order_tbl`( `Product_IDP`, `Customer_ID`, `Size_ID`, `Sugar_Level`,  `Addons`, `Quantity`, `Amount`) 
                         VALUES ('{$order_info}')";
         $connection->query($insertOrder);
+        header("Location: order.php");
         
   }
     
@@ -101,32 +110,7 @@ if(isset($_SESSION["customerInfo"]['Id']))
        {
            $TotalAmount += $orderTotalAmount['Amount'];
        }
-
 }
-
-//if(isset($_SESSION["customerInfo"]['Id']))
-//{
-        //fetch total amount
-
-  //      $TotalAmount = 0;
-
-   //     $customer_id = $_SESSION["customerInfo"]['Id'];
-   //     $getOrderAmount =  "Select * from order_tbl where Is_Active and Customer_ID = {$customer_id}";
-   //     $OrderAmount = $connection->query($getOrderAmount ); // execute the query to the database 
-//	$OrderAmount = $OrderAmount->fetch_all(MYSQLI_ASSOC);
-        
-       
-
-  //     foreach ($OrderAmount as $key => $orderamountVal) 
-   //     {
-    //            echo $orderamountVal[0]['Amount'];
-    //    }
-
-
-//}
-
-
-
 
 ?>
 <head>

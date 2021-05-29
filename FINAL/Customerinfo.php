@@ -54,7 +54,7 @@ if(isset($_POST['Submit']))
                 <input type="text" class="form-control" name="F_Name" placeholder="Firstname" required="required"><br><br>
             </div> 
             
-            <div class="form-group">
+            <div class="-formgroup">
                 <input type="text" class="form-control" name="Cust_Num" placeholder="Phone number" required="required"><br><br>
             </div> 
             

@@ -13,26 +13,26 @@ session_start();
 
 
 if(isset($_SESSION["customerInfo"]['Id']))
-{
-        //fetch order
-        $customer_id = $_SESSION["customerInfo"]['Id'];
-        $getActiveOrder = "Select * from order_tbl where Is_Active and Customer_ID = {$customer_id}";
-        $activeOrder = mysqli_query($connection, $getActiveOrder);
-        var_dump($activeOrder);
+// {
+//         //fetch order
+//         $customer_id = $_SESSION["customerInfo"]['Id'];
+//         $getActiveOrder = "Select * from order_tbl where Is_Active and Customer_ID = {$customer_id}";
+//         $activeOrder = mysqli_query($connection, $getActiveOrder);
+//         var_dump($activeOrder);
 
-    if ($activeOrder)
-    {
-        // it return number of rows in the table.
-        $row = mysqli_num_rows($activeOrder);
+//     if ($activeOrder)
+//     {
+//         // it return number of rows in the table.
+//         $row = mysqli_num_rows($activeOrder);
           
-           if ($row)
-              {
-              echo "Number of row in the table : " . $row;
-              }
-        // close the result.
-        //mysqli_free_result($activeOrder);
-    }
-}
+//            if ($row)
+//               {
+//               echo "Number of row in the table : " . $row;
+//               }
+//         // close the result.
+//         //mysqli_free_result($activeOrder);
+//     }
+// }
 
 ?>
 
@@ -87,7 +87,7 @@ if(isset($_SESSION["customerInfo"]['Id']))
                             <a class="nav-link" href="order.php">
                                 <img src="https://img.icons8.com/dotty/40/000000/add-shopping-cart.png"/>
                                 <div class="addcart-icon">
-                                    <center><span class="addcart-text"><?php echo $row ?></span>
+                                    <center><span id="count" class="addcart-text"><?php echo $row ?></span>
                                 </div>
                             </a>
                         </li>
