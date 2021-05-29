@@ -249,7 +249,7 @@ hr {
                             <div class="col-9 col-sm-5"><?php echo $OrderlistVal['Product_Name']?></div>
                             <div class="d-none d-sm-block col-2"><?php echo $OrderlistVal['Quantity']?></div>
                             <div class="d-none d-sm-block col-2 text-95"> ₱ <?php echo number_format($OrderlistVal['Amount']/$OrderlistVal['Quantity'],2)?></div>
-                            <div class="col-2 text-secondary-d2"> ₱<?php echo number_format($OrderlistVal['Amount'],2)?></div>
+                            <div class="col-2 text-secondary-d2"> ₱ <?php echo number_format($OrderlistVal['Amount'],2)?></div>
                         </div>
                     </div>
                     <?php endforeach ?>
@@ -264,7 +264,7 @@ hr {
                                     Total Amount:
                                 </div>
                                 <div class="col-2">
-                                    <span class="text-150 text-success-d3 opacity-2"><?php echo number_format($TotalAmount,2) ?></span>
+                                    <span class="text-150 text-success-d3 opacity-2"> ₱ <?php echo number_format($TotalAmount,2) ?></span>
                                 </div>
                             <!-- </div> -->
                         <!-- </div> -->
