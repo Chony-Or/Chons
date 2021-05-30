@@ -1,22 +1,12 @@
 <?php 
 include 'header.php';
-
-if (isset($_SESSION["customerInfo"]))
-{
-    // header("Refresh:0; url=order.php");
-}
 ?>
 
-<?php 
-//session_start();
-?>
 <?php
-// $server = "localhost";
-// $username = "root";
-// $password = "";
-// $DB = "lhoyzki_ordering";
+if(isset($_SESSION["customerInfo"]['Id']))
+{
 
-// $connection = new mysqli($server,$username,$password,$DB);
+}
 ?>
 
 <?php
@@ -99,17 +89,33 @@ if(isset($_POST['ProductId']))
 if(isset($_SESSION["customerInfo"]['Id']))
 {
         //fetch order
-        $TotalAmount = 0;
+        
         $customer_id = $_SESSION["customerInfo"]['Id'];
         $getCustomerOrder = "Select * from order_tbl as A Left Join product_tbl as B on B.Product_IDP = A.Product_IDP  where A.Customer_ID = {$customer_id} and A.Is_Active";
         $Orderlist = $connection->query($getCustomerOrder ); // execute the query to the database 
 	$Orderlist = $Orderlist->fetch_all(MYSQLI_ASSOC);
 
         //for computation of the totalamount of order
+
+        $TotalAmount = null;
+
+      
         foreach ($Orderlist as $key => $orderTotalAmount) 
        {
            $TotalAmount += $orderTotalAmount['Amount'];
        }
+       
+}
+if(isset($Orderlist)){
+} else {
+$emptyArray = []; 
+$Orderlist= $emptyArray;
+}
+
+
+if(isset($TotalAmount)){
+} else {
+echo $TotalAmount=0;
 }
 
 ?>

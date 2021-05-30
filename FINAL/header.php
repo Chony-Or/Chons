@@ -10,30 +10,14 @@ session_start();
 ?>
 
 <?php
-
-
 if(isset($_SESSION["customerInfo"]['Id']))
-// {
-//         //fetch order
-//         $customer_id = $_SESSION["customerInfo"]['Id'];
-//         $getActiveOrder = "Select * from order_tbl where Is_Active and Customer_ID = {$customer_id}";
-//         $activeOrder = mysqli_query($connection, $getActiveOrder);
-//         var_dump($activeOrder);
 
-//     if ($activeOrder)
-//     {
-//         // it return number of rows in the table.
-//         $row = mysqli_num_rows($activeOrder);
-          
-//            if ($row)
-//               {
-//               echo "Number of row in the table : " . $row;
-//               }
-//         // close the result.
-//         //mysqli_free_result($activeOrder);
-//     }
-// }
+$row = null;
 
+if(isset($row)){
+} else {
+    echo $row=0;
+}
 ?>
 
 

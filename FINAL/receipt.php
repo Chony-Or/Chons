@@ -10,14 +10,15 @@ session_start();
 
 <?php
 
-if (isset($_SESSION["customerInfo"]['id'])) 
-{
-    $id = $_SESSION["customerInfo"]['id'];
+// if (isset($_SESSION["customerInfo"]['id'])) // update if the customer checkout
+// {
+//     $id = $_SESSION["customerInfo"]['id'];
 
-	$sqlvar ="UPDATE customer_tbl SET Is_Checkout = 1 WHERE Product_IDP = $id";
+// 	$sqlupdate ="UPDATE customer_tbl SET Is_Checkout = 1 WHERE Customer_ID = {$id}";
+// 	$connection->query($sqlupdate);
+//     var_dump($sqlupdate);
+// }
 
-	$connection->query($sqlvar);
-}
 
 if(isset($_SESSION["customerInfo"]['Id']))
 {
@@ -37,13 +38,20 @@ if(isset($_SESSION["customerInfo"]['Id']))
 
 
        
-        $getCustomerInfo = "Select * from customer_tbl where Is_Active = 1";
+        $getCustomerInfo = "Select * from customer_tbl where Customer_ID = {$customer_id}";
         $customerInfo = $connection->query($getCustomerInfo ); // execute the query to the database 
 	    $customerInfo = $customerInfo->fetch_all(MYSQLI_ASSOC);
 
-}
+        $sqlupdate ="UPDATE customer_tbl SET Is_Checkout = 1 WHERE Customer_ID = {$customer_id}";
+        $connection->query($sqlupdate);
+        
 
+        $sqlvar ="UPDATE customer_tbl SET Is_Active = 0 WHERE Customer_ID = {$customer_id}";
+        $connection->query($sqlvar);
+
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -279,6 +287,12 @@ hr {
             </div>
         </div>
     </div>
+    <form action="HomePage.php" method="POST">
+        <center>
+        <input name="submit"  type="submit" value="CONTINUE SHOPPING">
+       <!-- <B>CONTINUE SHOPPING</B></button><br><br> -->
+        </center>
+    </form>
 </div>
 
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -289,5 +303,5 @@ hr {
 </body>
 </html>
 <?php 
-//session_destroy();
+session_destroy();
 ?>
