@@ -32,9 +32,9 @@ $Product_Name = $_POST["Product_Name"];
 $Product_Code = $_POST["Product_Code"];
 $Product_Category = $_POST["Product_Category"];
 $Product_Details = $_POST["Product_Details"];
-$Size_Regular = $_POST["Regular"];
-$Size_Large = $_POST["Large"];
-$Size_Extra = $_POST["ExtraLarge"];
+$Size_Regular = $_POST["regular"];
+$Size_Large = $_POST["large"];
+$Size_Extra = $_POST["extralarge"];
 $hdPic = $_POST["hiddenpic"];
 
 
@@ -67,6 +67,8 @@ else
 	$connection->query($sqlvar);
 
 
+
+	
 	if (count($SizeRegular))
 	{
 		$insertRegular = "UPDATE size_tbl SET Amount = '{$Size_Regular}'  WHERE Product_IDP = {$Id} and Size_Description = 'REGULAR'";
@@ -76,6 +78,7 @@ else
 		('{$Id}','{$Size_Regular}','REGULAR')";
 	}
 	$connection->query($insertRegular);
+	var_dump($insertRegular);
 
 	if (count($SizeLarge))
 	{
@@ -86,6 +89,7 @@ else
 		('{$Id}','{$Size_Large}','LARGE')";
 	}
 	$connection->query($insertLarge);
+	var_dump($insertLarge);
 
 	
 	if (count($SizeExtra))
@@ -97,12 +101,14 @@ else
 		('{$Id}','{$Size_Extra}','EXTRA LARGE')";
 	}
 	$connection->query($insertExtra);
-	
-}
+	var_dump($insertExtra);
 
 	$getProduct = "Select * from product_tbl where Is_Active and Product_IDP = {$Id}";
 	$Product = $connection->query($getProduct);
 	$Product = $Product->fetch_all(MYSQLI_ASSOC);
+}
+
+
 }
 ?>
 <body>
@@ -160,15 +166,15 @@ else
 		</tr>
 		<tr>
 		<td><label for="Size_Description" style= "color:black;font-size: 20px;">Price for Regular: </label> </td>
-		<td><input type="Text"	name="Regular" style="font-size: 20px;" value="<?php //echo $SizeRegular[0]['Amount']?>"></td>
+		<td><input type="Text"	name="regular" style="font-size: 20px;" ></td> 
 		</tr>
 		<tr>
         <td><label for="Size_Description" style= "color:black; font-size: 20px;">Price for Large: </label></td>
-		<td><input type="Text"	name="Large" style="font-size: 20px;" value="<?php //echo $SizeLarge[0]['Amount']?>"></td>
+		<td><input type="Text"	name="large" style="font-size: 20px;" ></td>
 		</tr>
 		<tr>
 		<td><label for="Size_Description" style= "color:black; font-size: 20px;">Product Extra-Large: </label></td>
-		<td><Input type="Text" name="ExtraLarge" style="font-size: 20px;" value="<?php //echo $SizeExtra[0]['Amount']?>"></td>
+		<td><Input type="Text" name="extralarge" style="font-size: 20px;" ></td>  <!--value="< echo $SizeExtra[0]['Amount']?>"-->
 		</tr>
 		<tr>	
 		<td><input type ="hidden" name="hiddenpic" value=<?php echo $Product[0]['Product_Picture']?>></td>

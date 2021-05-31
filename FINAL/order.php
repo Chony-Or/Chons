@@ -106,14 +106,14 @@ if(isset($_SESSION["customerInfo"]['Id']))
        }
        
 }
-if(isset($Orderlist)){
+if(isset($Orderlist)){ // this is to avoid returning error when the orderlist is empty
 } else {
 $emptyArray = []; 
 $Orderlist= $emptyArray;
 }
 
 
-if(isset($TotalAmount)){
+if(isset($TotalAmount)){ // this is to avoid returning a error when the total amount is empty
 } else {
 echo $TotalAmount=0;
 }
