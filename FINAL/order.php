@@ -2,12 +2,6 @@
 include 'header.php';
 ?>
 
-<?php
-if(isset($_SESSION["customerInfo"]['Id']))
-{
-
-}
-?>
 
 <?php
 
@@ -47,17 +41,24 @@ if(isset($_POST['ProductId']))
   if(isset($_SESSION["customerInfo"]['Id']))
   {
         //insert order
-        $adons = $_POST['addons'];
+                        //condition?     true value:      falsevalue
+        $adons = isset($_POST['addons'])?  $_POST['addons']:array();
         $addons_price = $_POST['addons_price'];
         $SizePrice = $_POST['SizePrice'];
         $amount = 0;
         $adonsAmount = 0;
 
+
+        if(count($adons))
+        {
+                foreach ($adons as $key => $adonVal) 
+                {
+                $adonsAmount += $addons_price[$adonVal];
+                }
+        }
+
         // for getting the total amount for the addons 
-       foreach ($adons as $key => $adonVal) 
-       {
-           $adonsAmount += $addons_price[$adonVal];
-       }
+      
 
        $amount = $_POST['Quantity'] * ($SizePrice[$_POST['sizes']] + $adonsAmount  );
 
@@ -67,7 +68,7 @@ if(isset($_POST['ProductId']))
                                 'Customer_ID'=>$_SESSION["customerInfo"]['Id'],
                                 'Size_ID'=>$_POST['sizes'],
                                 'Sugar_Level'=>$_POST['Sugar_Level'],
-                                'Addons'=>implode(",",$adons),
+                                'Addons'=>count($adons)?implode(",",$adons):"",
                                 'Quantity'=>$_POST['Quantity'],
                                 'Amount'=>$amount,
                         );

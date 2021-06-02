@@ -64,12 +64,12 @@ if(isset($_GET['id']))
                     <form action="order.php" method="POST">
 
                         <div style="margin-left: 15px" aria-required="true"><b style="font-size:15px;">Available Size/s:</b><br><br>
-                        <input type="hidden" name="ProductId"  value="<?php echo $ProductMilkshake[0]['Product_IDP']?>">
+                        <input type="hidden" name="ProductId" required="required"  value="<?php echo $ProductMilkshake[0]['Product_IDP']?>">
                         <?php foreach($ProductSize as $key => $SizeValue): ?>   <!-- get all price and sizes from the database -->
                         <table style="width: 100%">
                             <td>
-                                <input type="hidden" name="SizePrice[<?php echo $SizeValue['Size_ID'] ?>]"  value="<?php echo $SizeValue['Amount'] ?>">
-                                <input type="radio" style="margin-left: 15px; margin-right: 15px" name="sizes" id="<?php echo $SizeValue['Size_Description'] ?>" value="<?php echo $SizeValue['Size_ID'] ?>">
+                                <input type="hidden" name="SizePrice[<?php echo $SizeValue['Size_ID'] ?>]" required="required" value="<?php echo $SizeValue['Amount'] ?>">
+                                <input type="radio" style="margin-left: 15px; margin-right: 15px" required="required" name="sizes" id="<?php echo $SizeValue['Size_Description'] ?>" value="<?php echo $SizeValue['Size_ID'] ?>">
                                 <label for="<?php echo $SizeValue['Size_Description'] ?>" style="font-size:14px;  padding:5px"><?php echo $SizeValue['Size_Description'] ?></label></td>
                            
                             <td><p style="text-align:right; margin-right: 15px">+₱<?php echo $SizeValue['Amount'] ?></p></td>
@@ -90,23 +90,23 @@ if(isset($_GET['id']))
                             <table style="width: 70%; margin-left: 15px">
                             <tr>
                                 <td>
-                                    <input type="radio" id="1h" name="Sugar_Level" value="100">
+                                    <input type="radio" id="1h" name="Sugar_Level" required="required" value="100">
                                     <label for="1h" style="font-size: 14px; padding:5px">100%</label>
                                 </td>
                                 <td>
-                                    <input type="radio" id="7payb" name="Sugar_Level" value="75">
+                                    <input type="radio" id="7payb" name="Sugar_Level" required="required" value="75">
                                     <label for="7payb" style="font-size: 14px; padding:5px">75%</label>
                                 </td>
                                 <td>
-                                    <input type="radio" id="pipti" name="Sugar_Level" value="50">
+                                    <input type="radio" id="pipti" name="Sugar_Level" required="required" value="50">
                                     <label for="pipti" style="font-size: 14px; padding:5px">50%</label>
                                 </td>
                                 <td>
-                                    <input type="radio" id="2payb" name="Sugar_Level" value="25">
+                                    <input type="radio" id="2payb" name="Sugar_Level" required="required" value="25">
                                     <label for="2payb" style="font-size: 14px; padding:5px">25%</label>
                                 </td>
                                 <td>
-                                    <input type="radio" id="zero" name="Sugar_Level" value="0">
+                                    <input type="radio" id="zero" name="Sugar_Level" required="required" value="0">
                                     <label for="zero" style="font-size: 14px; padding:5px">0%</label>
                                 </td>
                             </tr>
@@ -136,7 +136,7 @@ if(isset($_GET['id']))
                    
                         <br><b for="quan" style="font-size:15px; margin-left: 15px">Quantity :</b>
                         <button class="quant" type="button" style="margin-left: 4px "  onclick="decrement()"><b>-</b></button>
-                        <input name="Quantity" style="text-align:center; width: 15% ; height: 25px;" id=Input type=number min=1 max=100 value=1>
+                        <input name="Quantity" style="text-align:center; width: 15% ; height: 25px;" required="required" id=Input type=number min=1 max=100 value=1>
                         <button class="quant" type="button" onclick="increment()"><b>+</b></button>
 
 						<script>
