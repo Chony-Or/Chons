@@ -43,8 +43,9 @@
                             <a class="nav-link" href="feedback.php">FEEDBACKS</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="admin.php">
+                        <li class="nav-item" >
+                            <a class="nav-link" href="logout.php">
+                                
                                 <img src="https://img.icons8.com/color/48/000000/in-app-messaging.png"style="width: 43px; height:43px"/>
                             </a>
                         </li>
