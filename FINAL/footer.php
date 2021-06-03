@@ -85,7 +85,7 @@
                                 <form action="HomePage.php" onsubmit="myFunction()" method="POST">
                                  
                                     <textarea rows="10" cols="55" name="customer_Feedback"></textarea><br>
-                                    <button class="submit-button" type="submit">SUBMIT</button>
+                                    <button class="submit-button" name="submit" type="submit">SUBMIT</button>
      
                                 </form>
                             </li>

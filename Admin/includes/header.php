@@ -39,6 +39,9 @@
                         <li class="nav-item">   
                             <a class="nav-link" href="salesreport.php">SALES</a>
                         </li>
+                        <li class="nav-item">   
+                            <a class="nav-link" href="feedback.php">FEEDBACKS</a>
+                        </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="admin.php">
