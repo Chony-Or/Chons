@@ -52,19 +52,19 @@ if(isset($_POST['Submit']))
             <p class="text-canter">Contact Information</p>   
 
             <div class="form-group">
-                <input type="text" class="form-control" name="L_Name" placeholder="Lastname" required="required"><br><br>
+                <input type="text" class="form-control" name="L_Name" placeholder="Lastname" required="required" minlength ="0" maxlength = "20"><br><br>
             </div>  
 
             <div class="form-group">
-                <input type="text" class="form-control" name="F_Name" placeholder="Firstname" required="required"><br><br>
+                <input type="text" class="form-control" name="F_Name" placeholder="Firstname" required="required"  minlength ="0" maxlength = "20"><br><br>
             </div> 
             
             <div class="-formgroup">
-                <input type="text" class="form-control" name="Cust_Num" placeholder="Phone number" required="required"><br><br>
+                <input type="number" class="form-control" name="Cust_Num" placeholder="Phone number" required="required"min="1" max="11"><br><br>
             </div> 
             
             <div class="form-group">
-                <input type="text" class="form-control" name="Cust_Address" placeholder="Address" required="required"><br><br>
+                <input type="text" class="form-control" name="Cust_Address" placeholder="Address" required="required"  minlength ="0" maxlength = "100"><br><br>
             </div> 
     
             <div class="form-group">
