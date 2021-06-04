@@ -60,7 +60,7 @@ if(isset($_POST['Submit']))
             </div> 
             
             <div class="form-group">
-                <input type="number" class="form-control" name="Cust_Num" placeholder="Phone number" required="required" min="9999999999" max="99999999999"><br><br>
+                <input type="number" class="form-control" name="Cust_Num" placeholder="Phone number" required="required" min="999999999" max="9999999999"><br><br>
             </div> 
             
             <div class="form-group">
