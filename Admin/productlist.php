@@ -17,7 +17,7 @@
 				<th>Name</th>
 				<th>Code</th>
 				<th>Category</th>
-				<th>Quantity</th>
+				<!-- <th>Quantity</th> -->
 				<th>Action</th>
 			</tr>
 			<?php foreach ($Product as $key => $ProductValue): ?>
@@ -25,7 +25,7 @@
 				<td><?php echo $ProductValue['Product_Name'] ?></td>
 				<td><?php echo $ProductValue['Product_Code'] ?></td>
 				<td><?php echo $ProductValue['Product_Category'] ?></td>
-				<td><?php echo $ProductValue['Product_Stocks'] ?></td>
+				<!-- <td><?php echo $ProductValue['Product_Stocks'] ?></td> -->
 				<td>
 				
 				<a class="btn btn-warning" href="editproduct.php?id=<?php echo $ProductValue['Product_IDP']  ?>">EDIT</a>
