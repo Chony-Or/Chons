@@ -68,7 +68,7 @@ if(isset($_POST['Submit']))
             </div> 
     
             <div class="form-group">
-                <button type="submit" name="Submit" class="btn btn-primary btn-lg btn-block">Continue to checkout</button><br><br>
+                <button type="submit" name="Submit" class="btn btn-primary btn-lg btn-block">CONTINUE</button><br><br>
             </div> 
 
         </form>
