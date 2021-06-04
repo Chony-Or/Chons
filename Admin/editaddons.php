@@ -37,7 +37,7 @@ if (isset($_POST['Submit']))
 	width:fit-content;
 	margin-bottom: 50px;
     background: #ececec;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 9px 12px 9px 0px rgb(134 134 134);
     padding: 50px;	
     position:absolute;	
 		}
