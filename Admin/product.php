@@ -7,7 +7,7 @@
 if (isset($_POST['Submit']))
 	{
 
-		$Product_Stocks = $_POST["Product_Stocks"];
+		
 		$Product_Name = $_POST["Product_Name"];
 		$Product_Code = $_POST["Product_Code"];
 		$Product_Category = $_POST["Product_Category"];
@@ -40,8 +40,8 @@ if (isset($_POST['Submit']))
 			}
 			move_uploaded_file($_FILES["Product_Picture"]["tmp_name"], $Product_Picture);// store location of the picture
 
-			$sqlvar ="INSERT INTO product_tbl(Product_Stocks,Product_Name,Product_Code,Product_Category,Product_Details,Product_Picture) VALUES
-			('{$Product_Stocks}','{$Product_Name}','{$Product_Code}','{$Product_Category}','{$Product_Details}','{$Product_Picture}')";
+			$sqlvar ="INSERT INTO product_tbl(Product_Name,Product_Code,Product_Category,Product_Details,Product_Picture) VALUES
+			('{$Product_Name}','{$Product_Code}','{$Product_Category}','{$Product_Details}','{$Product_Picture}')";
 			
 
 			if (mysqli_query($connection, $sqlvar)) 
@@ -119,10 +119,10 @@ if (isset($_POST['Submit']))
 	
 	<form action="product.php" method="POST" enctype="multipart/form-data">
 	<table>
-      <tr>
+      <!-- <tr>
 		<td><label for="Product_Stocks" style= "color:black">Product Stocks: </label></td>
 		<td><input type="Text"	name="Product_Stocks"></td>
-		</tr>
+		</tr> -->
 		<tr>
        <td><label for="Product_Name" style= "color:black">Product Name: </label></td>
 	   <td><input type="Text"	name="Product_Name"></td>

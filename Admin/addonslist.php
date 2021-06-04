@@ -16,7 +16,7 @@
 		<tr>
 			<th>Addon's Name</th>
 			<th>Addon's Price</th>
-			<th>Addon's Stocks</th>
+			<!-- <th>Addon's Stocks</th> -->
             <th>Action</th>
 
 		</tr>
@@ -24,7 +24,7 @@
 		<tr>
 			<td><?php echo $AddonsValue['Addons_Name'] ?></td>
 			<td><?php echo $AddonsValue['Addons_Price'] ?></td>
-			<td><?php echo $AddonsValue['Addons_Stocks'] ?></td>
+			<!-- <td><?php echo $AddonsValue['Addons_Stocks'] ?></td> -->
 			<td>
 			<form action="addonslist.php" method="POST">
 				<a class="btn btn-warning" href="editaddons.php?id=<?php echo $AddonsValue['Addons_ID']  ?>">Edit</a>
