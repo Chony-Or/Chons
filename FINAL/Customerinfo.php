@@ -59,7 +59,7 @@ if(isset($_POST['Submit']))
                 <input type="text" class="form-control" name="F_Name" placeholder="Firstname" required="required"  minlength ="0" maxlength = "20"><br><br>
             </div> 
             
-            <div class="-formgroup">
+            <div class="form-group">
                 <input type="number" class="form-control" name="Cust_Num" placeholder="Phone number" required="required"min="1" max="11"><br><br>
             </div> 
             
