@@ -89,7 +89,7 @@ if (isset($_POST['Submit']))
 	margin-bottom: 50px;
     font-size: 20px;
     background: #ececec;
-    box-shadow: 7px 7px 20px 0px rgb(194 241 239);
+    box-shadow: 9px 12px 9px 0px rgb(134 134 134);
     padding: 100px;	
     position:absolute;	
 		}
